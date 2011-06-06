@@ -1,6 +1,8 @@
-AuthLove::Application.routes.draw do
-  get "users/new"
-
+Auth::Application.routes.draw do  
+  get "sign_up" => "users#new", :as => "sign_up"  
+  root :to => "users#new"  
+  resources :users  
+end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
