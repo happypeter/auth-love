@@ -1,3 +1,4 @@
+http://guides.rubyonrails.org/security.html
 2.1 What are Sessions?
 
 — HTTP is a stateless protocol. Sessions make it stateful.
