@@ -4,7 +4,7 @@ class ApplicationController < ActionController::Base
     
   private  
   def current_user  
-    @current_user ||= User.find(session[:user_id]-1) if session[:user_id]  
+    @current_user ||= User.find(session[:user_id]) if session[:user_id]  
     # session[:user_id] will stay there even auth_love and its db is deleted
     # session[:user_id] will still be valid, when auth_love is started again
     # it can only be removed by close the firefox tab and then restart
