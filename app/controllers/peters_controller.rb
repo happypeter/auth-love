@@ -1,4 +1,4 @@
-class PeterController < ApplicationController  
+class PetersController < ApplicationController  
   def new  
   end  
     
