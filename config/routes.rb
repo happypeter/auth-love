@@ -1,5 +1,5 @@
 AuthLove::Application.routes.draw do  
-  get "log_in" => "peters#new", :as => "log_in"  
+  get "log_in" => "peters#new", :as => "log_in"  # if you use "peters/new" rather than "peters#new", error: peters uninitilized
   # post "log_in" => "peter#new", :as => "log_in"  
   # if you use POST to sent '/login', you need the above line, otherwise you
   # get a strange error: No route matches "/log_in"
