@@ -1,15 +1,15 @@
 AuthLove::Application.routes.draw do  
-  get "log_in" => "peters#new", :as => "log_in"  # if you use "peters/new" rather than "peters#new", error: peters uninitilized
+  get "log_in" => "sessions#new", :as => "log_in"  # if you use "peters/new" rather than "peters#new", error: peters uninitilized
   # post "log_in" => "peter#new", :as => "log_in"  
   # if you use POST to sent '/login', you need the above line, otherwise you
   # get a strange error: No route matches "/log_in"
   
-  get "log_out" => "peters#destroy", :as => "log_out"  
+  get "log_out" => "sessions#destroy", :as => "log_out"  
 
   get "sign_up" => "users#new", :as => "sign_up"  
   root :to => "users#new"  
   resources :users  
-  resources :peters
+  resources :sessions
 end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
