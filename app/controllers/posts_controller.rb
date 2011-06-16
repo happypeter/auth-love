@@ -5,9 +5,15 @@ class PostsController < ApplicationController
 
   def check_perm
     @post = Post.find(params[:id])
-    if @post.name != current_user.email
+    # FIXME: this if sucks
+    if current_user == nil
       flash[:notice] = "Sorry, you are not allowed to edit this post"
       redirect_to posts_path
+    else 
+      if @post.name != current_user.email 
+        flash[:notice] = "Sorry, you are not allowed to edit this post"
+        redirect_to posts_path
+      end
     end
   end
   def index
