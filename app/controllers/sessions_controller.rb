@@ -3,6 +3,7 @@ class SessionsController < ApplicationController
   end  
     
   def create  
+  # called when "post sessions"
     user = User.authenticate(params[:email], params[:password])  
     if user  
       session[:user_id] = user.id # the session here, has nothing to do with the controller name Sessions, I will test this by using another controller name tommorrow! 
