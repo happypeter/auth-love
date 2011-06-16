@@ -1,7 +1,7 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
-  before_filter :check_perm, :only => [ :edit, :destroy ]
+  before_filter :check_perm, :only => [ :edit, :update, :destroy ]
 
   def check_perm
     @post = Post.find(params[:id])
@@ -80,8 +80,9 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
-    @post.destroy
-
+    if @post.destroy
+      flash[:notice] = "post deleted!"
+    end
     respond_to do |format|
       format.html { redirect_to(posts_url) }
       format.xml  { head :ok }
