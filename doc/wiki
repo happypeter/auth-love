@@ -14,3 +14,7 @@ User.find(session[:user_id])
     curl -i     http://192.168.1.103:3000/sessions
 
 good way to test
+
+## rails.vim
+
+`gf` rocks
