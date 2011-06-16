@@ -11,10 +11,15 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :name %><br />
-    <%= f.text_field :name %>
-  </div>
+  <% if current_user %>  
+    The user is (Email): <%= current_user.email %>  <br \>
+  <% else %>  
+    Not logged in, typed in your name mannually, plz
+    <div class="field">
+      <%= f.label :name %><br />
+      <%= f.text_field :name %>
+    </div>
+  <% end %>  
   <div class="field">
     <%= f.label :title %><br />
     <%= f.text_field :title %>
