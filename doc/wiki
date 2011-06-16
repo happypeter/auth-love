@@ -8,3 +8,9 @@ Most applications need to keep track of certain state of a particular user. This
 A session usually consists of a hash of values and a session id, usually a 32-character string, to identify the hash. Every cookie sent to the client’s browser includes the session id. And the other way round: the browser will send it to the server on every request from the client. In Rails you can save and retrieve values using the session method:
 session[:user_id] = @current_user.id
 User.find(session[:user_id])
+
+## crul
+
+    curl -i     http://192.168.1.103:3000/sessions
+
+good way to test
