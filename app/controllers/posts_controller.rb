@@ -1,6 +1,15 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
+  before_filter :check_perm, :only => [ :edit, :destroy ]
+
+  def check_perm
+    @post = Post.find(params[:id])
+    if @post.name != current_user.email
+      flash[:notice] = "Sorry, you are not allowed to edit this post"
+      redirect_to posts_path
+    end
+  end
   def index
     @posts = Post.all
 
@@ -34,7 +43,6 @@ class PostsController < ApplicationController
 
   # GET /posts/1/edit
   def edit
-    @post = Post.find(params[:id])
   end
 
   # POST /posts
@@ -57,7 +65,6 @@ class PostsController < ApplicationController
   # PUT /posts/1
   # PUT /posts/1.xml
   def update
-    @post = Post.find(params[:id])
 
     respond_to do |format|
       if @post.update_attributes(params[:post])
@@ -73,7 +80,6 @@ class PostsController < ApplicationController
   # DELETE /posts/1
   # DELETE /posts/1.xml
   def destroy
-    @post = Post.find(params[:id])
     @post.destroy
 
     respond_to do |format|
