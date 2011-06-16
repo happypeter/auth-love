@@ -1,10 +1,6 @@
 class PostsController < ApplicationController
   # GET /posts
   # GET /posts.xml
-  after_filter  :set_name, :only => [ :edit, :update, :create ]
-  def set_name
-     @post.name = current_user.email
-  end
   def index
     @posts = Post.all
 
@@ -45,6 +41,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
+    @post.name = current_user.email if current_user
 
     respond_to do |format|
       if @post.save
