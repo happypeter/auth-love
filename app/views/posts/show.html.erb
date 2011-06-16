@@ -16,17 +16,8 @@
 </p>
  
 <h2>Comments</h2>
-<% @post.comments.each do |comment| %>
-  <p>
-    <b>Commenter:</b>
-    <%= comment.commenter %>
-  </p>
- 
-  <p>
-    <b>Comment:</b>
-    <%= comment.body %>
-  </p>
-<% end %>
+<%= render :partial => "comments/comment",
+           :collection => @post.comments %>
  
 <h2>Add a comment:</h2>
 <%= form_for([@post, @post.comments.build]) do |f| %>
