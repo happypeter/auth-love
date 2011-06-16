@@ -1,6 +1,4 @@
 AuthLove::Application.routes.draw do  
-  resources :posts
-
   get "log_in" => "sessions#new", :as => "log_in"  # if you use "peters/new" rather than "peters#new", error: peters uninitilized
   # post "log_in" => "peter#new", :as => "log_in"  
   # if you use POST to sent '/login', you need the above line, otherwise you
@@ -10,8 +8,12 @@ AuthLove::Application.routes.draw do
 
   get "sign_up" => "users#new", :as => "sign_up"  
   root :to => "posts#index"  
+
   resources :users  
   resources :sessions
+  resources :posts do
+    resources :comments
+  end
 end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
