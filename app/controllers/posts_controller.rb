@@ -17,7 +17,12 @@ class PostsController < ApplicationController
     end
   end
   def index
-    @posts = Post.all
+    if params[:name]
+      @user = User.where(:name => params[:name]).first
+      @post = @user.posts
+    else
+      @posts = Post.all
+    end
 
     respond_to do |format|
       format.html # index.html.erb
