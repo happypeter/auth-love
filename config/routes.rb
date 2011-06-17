@@ -3,12 +3,14 @@ AuthLove::Application.routes.draw do
   # post "log_in" => "peter#new", :as => "log_in"  
   # if you use POST to sent '/login', you need the above line, otherwise you
   # get a strange error: No route matches "/log_in"
-  
-  match ':name' => 'posts#index', :as => 'user_posts'
   get "log_out" => "sessions#destroy", :as => "log_out"  
 
   get "sign_up" => "users#new", :as => "sign_up"  
   root :to => "posts#index"  
+  
+  match ':name' => 'posts#index', :as => 'user_posts'
+  # from now on every thing after 3000/xxx will be params[:name]
+  # so never put this before the above several lines
 
   resources :users do
     resources :posts

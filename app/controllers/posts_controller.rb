@@ -19,7 +19,7 @@ class PostsController < ApplicationController
   def index
     if params[:name]
       @user = User.where(:email => params[:name]).first
-      @post = @user.posts
+      @posts = @user.posts
     else
       @posts = Post.all
     end
