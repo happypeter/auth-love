@@ -18,7 +18,7 @@ class PostsController < ApplicationController
   end
   def index
     if params[:name]
-      @user = User.where(:email => params[:name]).first
+      @user = User.where(:name => params[:name]).first
       #FIXME: when @user = nil,(the given name is not found in db) 
       #brower gives a error page, shall give a
       #warning and a redirct instead
