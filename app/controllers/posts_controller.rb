@@ -10,7 +10,7 @@ class PostsController < ApplicationController
       flash[:notice] = "Sorry, you are not allowed to edit this post"
       redirect_to posts_path
     else 
-      if @post.name != current_user.email 
+      if @post.user_id != current_user.id 
         flash[:notice] = "Sorry, you are not allowed to edit this post"
         redirect_to posts_path
       end
@@ -19,6 +19,9 @@ class PostsController < ApplicationController
   def index
     if params[:name]
       @user = User.where(:email => params[:name]).first
+      #FIXME: when @user = nil,(the given name is not found in db) 
+      #brower gives a error page, shall give a
+      #warning and a redirct instead
       @posts = @user.posts
       # error
       # ruby-1.9.2-p180 :014 > posts = @user.posts
