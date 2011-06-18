@@ -6,6 +6,7 @@ AuthLove::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"  
 
   get "sign_up" => "users#new", :as => "sign_up"  
+  get "posts" => "posts#index" #peter added this foolishly
   root :to => "posts#index"  
   
   match ':name' => 'posts#index', :as => 'user_posts'
