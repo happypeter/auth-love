@@ -1,13 +1,18 @@
-<%= form_for([@post, @post.comments.build]) do |f| %>
-  <div class="field">
-    <%= f.label :commenter %><br />
-    <%= f.text_field :commenter %>
-  </div>
-  <div class="field">
-    <%= f.label :body %><br />
-    <%= f.text_area :body %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-<% end %>
+<% if current_user %>  
+    <%= form_for([@post, @post.comments.build]) do |f| %>
+      <div class="field">
+        <%= f.label :commenter %><br />
+        <%= f.text_field :commenter %>
+      </div>
+      <div class="field">
+        <%= f.label :body %><br />
+        <%= f.text_area :body %>
+      </div>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+    <% end %>
+<% else %>  
+   you need login to comment
+<% end %>  
+
