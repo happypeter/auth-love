@@ -11,9 +11,14 @@ pre {
   padding: 10px;
   font-size: 11px;
 }
-ii {
-  background-color: #eaeaea!important;
+comment_auth {
+  background:#EAEAEA;
+  padding:8px 5px 8px 15px;
 }
+comment_body { 
+  padding:5px 15px;
+}
+
 
 a { color: #000; }
 a:visited { color: #666; }
