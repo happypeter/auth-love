@@ -9,6 +9,3 @@ v0.1 release note:
  
  - comment still not under control
 
-Use this command to create the real tag
-
-    tag -a v0.1 HEAD
