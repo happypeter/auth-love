@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  validates :name,  :presence => true
+  validates :user_id,  :presence => true
   validates :title, :presence => true,
                     :length => { :minimum => 5 }
 

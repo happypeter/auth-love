@@ -66,7 +66,7 @@ class PostsController < ApplicationController
   # POST /posts.xml
   def create
     @post = Post.new(params[:post])
-    @post.name = current_user.email if current_user
+    @post.user_id = current_user.id if current_user
 
     respond_to do |format|
       if @post.save

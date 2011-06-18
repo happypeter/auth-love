@@ -14,10 +14,7 @@
   <% if current_user %>  
     The user is (Email): <%= current_user.email %>  <br \>
   <% else %>  
-    Not logged in, typed in your name mannually, plz
-    <div class="field">
-      <%= f.label :name %><br />
-      <%= f.text_field :name %>
+    Not logged in, plz login to post
     </div>
   <% end %>  
   <div class="field">
