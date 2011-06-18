@@ -7,9 +7,11 @@ AuthLove::Application.routes.draw do
 
   get "sign_up" => "users#new", :as => "sign_up"  
   get "posts" => "posts#index" #peter added this foolishly
+  post "sessions" => "sessions#create" # dirty for params[:name]
   root :to => "posts#index"  
   
   match ':name' => 'posts#index', :as => 'user_posts'
+  # because this line all my restful defualts won't work any more, how to fix?
   # from now on every thing after 3000/xxx will be params[:name]
   # so never put this before the above several lines
 
