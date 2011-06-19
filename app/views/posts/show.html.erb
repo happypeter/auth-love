@@ -1,6 +1,5 @@
 <p class="notice"><%= notice %></p>
  
- 
 <p>
   <b>Title:</b>
   <%= @post.title %>
@@ -11,10 +10,15 @@
   <%= @post.content %>
 </p>
  
-<h2>Comments</h2>
-<%= render :partial => "comments/comment",
-           :collection => @post.comments %>
- 
+<% if @post.comments.any? %>  
+
+  <h2>Comments</h2>
+  <%= render :partial => "comments/comment",
+             :collection => @post.comments %>
+   
+
+<% end %>
+
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
  

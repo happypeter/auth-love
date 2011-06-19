@@ -1,7 +1,9 @@
 <p>
   <comment_auth>
-  Commenter:
-  <%= comment.commenter %>
+  commenter:
+     <!--- do i need to guard the case when @user == nil --!> 
+  <% @user = User.where(:id => comment.user_id ).first %>
+  <%= @user.name %>
   </comment_auth>
 </p>
  
@@ -13,7 +15,7 @@
 </p>
  
 <p>
-  <%= link_to 'Destroy Comment', [comment.post, comment],
-               :confirm => 'Are you sure?',
+  <%= link_to 'destroy comment', [comment.post, comment],
+               :confirm => 'are you sure?',
                :method => :delete %>
 </p>
