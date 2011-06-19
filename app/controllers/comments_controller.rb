@@ -5,12 +5,10 @@ class CommentsController < ApplicationController
     @comment = @post.comments.create(params[:comment])
     @comment.user_id = current_user.id if current_user
     respond_to do |format|
-      if @post.save
-        format.html { redirect_to(@post, :notice => 'Post was successfully created.') }
-        format.xml  { render :xml => @post, :status => :created, :location => @post }
+      if @comment.save
+        format.html { redirect_to(@post, :notice => 'commnet was successfully created.') }
       else
-        format.html { render :action => "new" }
-        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+        format.html { redirect_to(@post, :notice => @comment.errors) }
       end
     end
   end
