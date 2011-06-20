@@ -14,8 +14,10 @@
 
 </p>
  
-<p>
-  <%= link_to 'destroy comment', [comment.post, comment],
-               :confirm => 'are you sure?',
-               :method => :delete %>
-</p>
+<% if current_user && current_user.id == @post.user_id %>
+    <p>
+      <%= link_to 'destroy comment', [comment.post, comment],
+                   :confirm => 'are you sure?',
+                   :method => :delete %>
+    </p>
+<% end %>
