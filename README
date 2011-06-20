@@ -1,3 +1,8 @@
+v0.2 release note:
+
+ - comments put into concern
+ - hide unauthorized action on view (edit, destroy...)
+
 v0.1 release note:
 
  - user can login&logout
@@ -5,7 +10,4 @@ v0.1 release note:
  - auth check for delete or edit but not show
  - the logic works, but the view is still very primitive
 
- ISSUE:
- 
- - comment still not under control
 
