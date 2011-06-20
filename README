@@ -1,3 +1,17 @@
+# DESIGN
+
+ - a ticketing system like http://news.ycombinator.com/
+ - authlove.com/yourname   shows all your own posts
+ - echo ticket will be given a unique number, and let's see how
+   big the number will grow, and the biggest number will show on top like railscasts.com
+   rather then the Hacker News 1,2,3,4... style
+ - when there are more than 100 tickets, maybe I will add search or tags to
+   all the tickets to have people find stuff 
+ - it is not twitter, it is not HN, and I will still keep my blog, the system will start simply as 
+   a newer ticket sits on top of the rest older ones, then what's on the tickets? Anything, be it a 
+   question from my students on vim or git, be it any other topic
+
+# RELEASE NOTES
 v0.2 release note:
 
  - comments put into concern
