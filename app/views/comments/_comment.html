@@ -1,23 +1,23 @@
 <p>
-  <comment_auth>
-  commenter:
-     <!---  i need to guard the case when @user == nil --!> 
-  <% @user = User.where(:id => comment.user_id ).first %>
-  <%= @user.name %>
-  </comment_auth>
+  <div id = "comment_auth">
+        <i>
+        <% if current_user && current_user.id == comment.user_id %>
+              <%= link_to '[destroy comment]', [comment.post, comment],
+                           :confirm => 'are you sure?',
+                           :method => :delete %>
+        <% end %>
+        </i>
+    commenter:
+          <% @user = User.where(:id => comment.user_id ).first %>
+          <%= @user.name %>
+
+  </div>
+  
 </p>
  
 <p>
-<comment_body>
+<div id="comment_body">
   <%= comment.body %>
-</comment_body>
-
+</div>
 </p>
  
-<% if current_user && current_user.id == comment.user_id %>
-    <p>
-      <%= link_to 'destroy comment', [comment.post, comment],
-                   :confirm => 'are you sure?',
-                   :method => :delete %>
-    </p>
-<% end %>

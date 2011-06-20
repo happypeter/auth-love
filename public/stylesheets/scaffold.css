@@ -48,14 +48,13 @@ font-weight: bold;
 }
 
 
-comment_auth {
+#comment_auth {
   background:#EAEAEA;
   padding:8px 5px 8px 15px;
 }
-comment_body { 
+#comment_body { 
   padding:5px 15px;
 }
-
 
 a { color: #000; }
 a:visited { color: #666; }
