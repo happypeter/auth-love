@@ -22,7 +22,11 @@ class PostsController < ApplicationController
       #FIXME: when @user = nil,(the given name is not found in db) 
       #brower gives a error page, shall give a
       #warning and a redirct instead
-      @posts = @user.posts
+      if @user != nil
+        @posts = @user.posts
+      else
+        @posts = nil
+      end
       # error
       # ruby-1.9.2-p180 :014 > posts = @user.posts
       # ActiveRecord::StatementInvalid: SQLite3::SQLException: no such column:

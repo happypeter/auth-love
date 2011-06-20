@@ -1,6 +1,7 @@
 <h1>Listing posts</h1>
 
 <table>
+<% if @posts != nil %>
   <tr>
     <th>Title</th>
     <th>Content</th>
@@ -9,22 +10,26 @@
     <th></th>
     <th></th>
   </tr>
+  <% @posts.each do |post| %>
+    <tr>
+      <td><%= post.title %></td>
+      <td><%= post.content %></td>
+      <% @user = User.where(:id => post.user_id ).first %>
+      <td> <%= @user.name %></td>
+      <td><%= link_to 'Show', post %></td>
+      <% if current_user && current_user.id == post.user.id  %>
+        <td><%= link_to 'Edit', edit_post_path(post) %></td>
+        <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+      <% end %>
+    </tr>
+  <% end %>
+  <br />
 
-<% @posts.each do |post| %>
-  <tr>
-    <td><%= post.title %></td>
-    <td><%= post.content %></td>
-    <% @user = User.where(:id => post.user_id ).first %>
-    <td> <%= @user.name %></td>
-    <td><%= link_to 'Show', post %></td>
-    <% if current_user && current_user.id == post.user.id  %>
-      <td><%= link_to 'Edit', edit_post_path(post) %></td>
-      <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-    <% end %>
-  </tr>
+  <%= link_to 'New Post', new_post_path %>
+<% else %>
+  No post found
+  <br \>
+  <%= link_to 'Back to Posts', posts_path %> 
 <% end %>
 </table>
 
-<br />
-
-<%= link_to 'New Post', new_post_path %>
