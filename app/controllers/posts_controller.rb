@@ -19,20 +19,11 @@ class PostsController < ApplicationController
   def index
     if params[:name]
       @user = User.where(:name => params[:name]).first
-      #FIXME: when @user = nil,(the given name is not found in db) 
-      #brower gives a error page, shall give a
-      #warning and a redirct instead
       if @user != nil
         @posts = @user.posts
       else
         @posts = nil
       end
-      # error
-      # ruby-1.9.2-p180 :014 > posts = @user.posts
-      # ActiveRecord::StatementInvalid: SQLite3::SQLException: no such column:
-      # posts.user_id: SELECT "posts".* FROM "posts" WHERE ("posts".user_id =
-      # 3)
-
     else
       @posts = Post.all
     end
