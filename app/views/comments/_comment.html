@@ -1,7 +1,7 @@
 <p>
   <comment_auth>
   commenter:
-     <!--- do i need to guard the case when @user == nil --!> 
+     <!---  i need to guard the case when @user == nil --!> 
   <% @user = User.where(:id => comment.user_id ).first %>
   <%= @user.name %>
   </comment_auth>
