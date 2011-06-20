@@ -4,6 +4,7 @@
   <tr>
     <th>Title</th>
     <th>Content</th>
+    <th>author</th>
     <th></th>
     <th></th>
     <th></th>
@@ -13,6 +14,8 @@
   <tr>
     <td><%= post.title %></td>
     <td><%= post.content %></td>
+    <% @user = User.where(:id => post.user_id ).first %>
+    <td> <%= @user.name %></td>
     <td><%= link_to 'Show', post %></td>
     <td><%= link_to 'Edit', edit_post_path(post) %></td>
     <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
