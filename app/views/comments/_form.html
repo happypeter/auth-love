@@ -2,7 +2,7 @@
     <%= form_for([@post, @post.comments.build]) do |f| %>
       <div class="field">
         <%= f.label :body %><br />
-        <%= f.text_area :body %>
+        <%= f.text_area :body, :size => "70x8" %>
       </div>
       <div class="actions">
         <%= f.submit %>
