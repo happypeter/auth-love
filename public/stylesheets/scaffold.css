@@ -1,16 +1,53 @@
-body { background-color: #fff; color: #333; }
+/*
 
-body, p, ol, ul, td {
-  font-family: verdana, arial, helvetica, sans-serif;
-  font-size:   13px;
-  line-height: 18px;
+    terrafirma1.0 by nodethirtythree design
+    http://www.nodethirtythree.com
+        
+*/
+body
+{
+margin-left: 200px;
+margin-right: 200px;
 }
 
-pre {
-  background-color: #eee;
-  padding: 10px;
-  font-size: 11px;
+/*Remove the line under links*/
+a {text-decoration:none;}
+
+/*this is very important for me*/
+pre { margin-left: 3% }
+
+
+#menu
+{
+position: relative;
+background: #dbdbdb no-repeat;
+height: 40px;
+padding: 0px 0px 0px 0px;
+margin: 0px 0px 10px 0px;
 }
+
+#menu ul li
+{
+display: inline;
+line-height: 40px;
+padding-left: 3px;
+}
+
+#menu ul li.first
+{
+border-left: 0px;
+}
+
+#menu ul li a
+{
+background-color: transparent;
+background-repeat: repeat-x;
+padding: 8px 12px 8px 12px;
+font-size: 15px;
+font-weight: bold;
+}
+
+
 comment_auth {
   background:#EAEAEA;
   padding:8px 5px 8px 15px;
