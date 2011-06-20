@@ -4,7 +4,6 @@
 <% if @posts != nil %>
   <tr>
     <th>Title</th>
-    <th>Content</th>
     <th>author</th>
     <th></th>
     <th></th>
@@ -13,7 +12,6 @@
   <% @posts.each do |post| %>
     <tr>
       <td><%= post.title %></td>
-      <td><%= post.content %></td>
       <% @user = User.where(:id => post.user_id ).first %>
       <td> <%= @user.name %></td>
       <td><%= link_to 'Show', post %></td>
