@@ -17,14 +17,6 @@ class PostsController < ApplicationController
     end
   end
   def index
-    if params[:name]
-      @user = User.where(:name => params[:name]).first
-      if @user != nil
-        @posts = @user.posts
-      else
-        @posts = nil
-      end
-    else
       @posts = Post.all
     end
 

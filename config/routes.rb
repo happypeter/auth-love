@@ -16,7 +16,7 @@ AuthLove::Application.routes.draw do
   resources :posts do
     resources :comments
   end
-  get ':name' => 'posts#index', :as => 'user_posts'
+  get ':name' => 'users#show', :as => 'user_home'
 end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
