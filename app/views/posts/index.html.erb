@@ -2,15 +2,9 @@
 
 <table>
 <% if @posts != nil %>
-  <tr>
-    <th>Title</th>
-    <th>author</th>
-    <th></th>
-    <th></th>
-  </tr>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= link_to post.title, post%></td>
+      <td>Card <%= post.id %>:<%= link_to post.title, post%></td>
       <% @user = User.where(:id => post.user_id ).first %>
       <td> <%= @user.name %></td>
       <% if current_user && current_user.id == post.user.id  %>
@@ -21,7 +15,6 @@
   <% end %>
   <br />
 
-  <%= link_to 'New Post', new_post_path %>
 <% else %>
   No post found
   <br \>
@@ -29,3 +22,4 @@
 <% end %>
 </table>
 
+<%= link_to 'Post Your own card', new_post_path %>
