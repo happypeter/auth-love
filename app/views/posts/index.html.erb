@@ -5,14 +5,16 @@
   <br />
     <div id="card">
       NO.<%= post.id %>:<%= link_to post.title, post%>
+      <br \>
       <% @user = User.where(:id => post.user_id ).first %>
-      (<i><%= @user.name %></i>)
+      (<i>by <%= @user.name %></i>)
       <% if current_user && current_user.id == post.user.id  %>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
       <% end %>
     </div>
   <% end %>
+  <br />
 
 <% else %>
   No post found
