@@ -9,11 +9,6 @@ AuthLove::Application.routes.draw do
 
   root :to => "posts#index"  
   
-  #get ':name' => 'posts#index', :as => 'user_posts'
-  # because this line all my restful defualts won't work any more, how to fix?
-  # from now on every thing after 3000/xxx will be params[:name]
-  # so never put this before the above several lines
-
   resources :users do
     resources :posts
   end
@@ -21,6 +16,7 @@ AuthLove::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  get ':name' => 'posts#index', :as => 'user_posts'
 end  
   # The priority is based upon order of creation:
   # first created -> highest priority.
