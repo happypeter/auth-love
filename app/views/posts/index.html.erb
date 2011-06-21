@@ -1,19 +1,18 @@
 <h1 style="text-align:center">NEW</h1>
 
-<table>
 <% if @posts != nil %>
   <% @posts.each do |post| %>
-    <tr>
-      <td>Card <%= post.id %>:<%= link_to post.title, post%></td>
-      <% @user = User.where(:id => post.user_id ).first %>
-      <td> <%= @user.name %></td>
-      <% if current_user && current_user.id == post.user.id  %>
-        <td><%= link_to 'Edit', edit_post_path(post) %></td>
-        <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
-      <% end %>
-    </tr>
-  <% end %>
   <br />
+    <div id="card">
+      NO.<%= post.id %>:<%= link_to post.title, post%>
+      <% @user = User.where(:id => post.user_id ).first %>
+      (<i><%= @user.name %></i>)
+      <% if current_user && current_user.id == post.user.id  %>
+        <%= link_to 'Edit', edit_post_path(post) %>
+        <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
+      <% end %>
+    </div>
+  <% end %>
 
 <% else %>
   No post found
@@ -22,4 +21,4 @@
 <% end %>
 </table>
 
-<%= link_to 'Post Your own card', new_post_path %>
+ <%= link_to 'Post Your own card', new_post_path %>
