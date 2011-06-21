@@ -8,7 +8,13 @@
  
 <% if @user.posts.any? %>  
 
-  <h2>I have posts</h2>
+  <h2>I have posts:</h2>
+  <% @posts=Post.where(:user_id => @user.id) %> 
+  <% @posts.each do |post| %>
+  <%= post.id%>
+  <%= link_to post.title, post_path(post)%>
+  <br \>
+  <%end%>
 
 <% end %>
 
