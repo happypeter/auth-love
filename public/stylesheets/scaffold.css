@@ -17,36 +17,11 @@ a {text-decoration:none;}
 pre { margin-left: 3% }
 
 
-#menu
-{
-position: relative;
-background: #dbdbdb no-repeat;
-height: 40px;
-padding: 0px 0px 0px 0px;
-margin: 0px 0px 10px 0px;
-}
-
-#menu ul li
-{
-display: inline;
-line-height: 40px;
-padding-left: 3px;
-}
-
 #card
 {
 background: #dbdbdb no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
-}
-
-#menu ul li a
-{
-background-color: transparent;
-background-repeat: repeat-x;
-padding: 8px 12px 8px 12px;
-font-size: 15px;
-font-weight: bold;
 }
 
 

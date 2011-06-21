@@ -10,7 +10,7 @@
 <body>
 
 
-<div  id="user_nav" align="right">  
+<div align="right">  
   <% if current_user %>  
     <% @user= User.find(current_user.id) %>
     <b> <%= link_to current_user.name, user_path(@user) %> </b> |
