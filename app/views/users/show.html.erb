@@ -13,10 +13,20 @@
   <% @posts.each do |post| %>
   <%= post.id%>
   <%= link_to post.title, post_path(post)%>
-  
+   
   <br \>
   <%end%>
 
+<% end %>
+  
+<h2>My Comments:</h2>
+
+<% @comments=Comment.where(:user_id => @user.id) %> 
+  <% @comments.each do |comment| %>
+  NO.<%= comment.id%>:
+  <%= comment.body%>
+  <br \>
+  <br \>
 <% end %>
 
 <%= link_to 'Back to Posts', posts_path %> |
