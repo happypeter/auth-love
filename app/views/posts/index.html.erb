@@ -5,11 +5,13 @@
       NO.<%= post.id %>:<%= link_to post.title, post%>
       <br \>
       <% @user = User.find(post.user_id )%>
-      (<i>by <%= link_to  @user.name, user_path(@user) %></i>)
+      <span class="comhead">
+      by <%= link_to  @user.name, user_path(@user) %>
       <% if current_user && current_user.id == post.user.id  %>
         <%= link_to 'Edit', edit_post_path(post) %>
         <%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %>
       <% end %>
+      </span>
     </div>
   <% end %>
   <br />
