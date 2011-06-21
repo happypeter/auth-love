@@ -1,9 +1,8 @@
-<h2>My Name:</h2>
-<%= @user.name %>
+<table border=0>
+<tr><td valign=top>user:</td><td><%= @user.name %></td></tr>
+<tr><td valign=top>email:</td><td><%= @user.email %></td></tr>
+</table>
 
-<h2>My Email:</h2>
-<%= @user.email %>
- 
 <h2>My Posts:</h2>
 <% if @user.posts.any? %>  
 

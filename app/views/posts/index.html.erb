@@ -2,7 +2,7 @@
   <% @posts.each do |post| %>
   <br />
     <div id="card">
-      NO.<%= post.id %>:<%= link_to post.title, post%>
+      <%= post.id %>. <%= link_to post.title, post%>
       <br \>
       <% @user = User.find(post.user_id )%>
       <span class="comhead">
