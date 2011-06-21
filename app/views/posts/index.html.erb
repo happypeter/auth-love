@@ -1,4 +1,4 @@
-<h1>Listing posts</h1>
+<h1 style="text-align:center">NEW</h1>
 
 <table>
 <% if @posts != nil %>
@@ -7,14 +7,12 @@
     <th>author</th>
     <th></th>
     <th></th>
-    <th></th>
   </tr>
   <% @posts.each do |post| %>
     <tr>
-      <td><%= post.title %></td>
+      <td><%= link_to post.title, post%></td>
       <% @user = User.where(:id => post.user_id ).first %>
       <td> <%= @user.name %></td>
-      <td><%= link_to 'Show', post %></td>
       <% if current_user && current_user.id == post.user.id  %>
         <td><%= link_to 'Edit', edit_post_path(post) %></td>
         <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
