@@ -2,8 +2,9 @@
 
 <% if @users != nil %>
   <% @users.each do |user| %>
-  <%= user.id %>
-  <%= link_to user.name, user %>
+  User ID: <%= user.id %> <br \>
+  User Name: <%= link_to user.name, user %>
+  <br \>
   <br \>
   <% end %>
 

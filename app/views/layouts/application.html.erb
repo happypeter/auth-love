@@ -12,7 +12,8 @@
 
 <div  id="user_nav" align="right">  
   <% if current_user %>  
-    <b> <%= current_user.name %> </b> |
+    <% @user= User.find(current_user.id) %>
+    <b> <%= link_to current_user.name, user_path(@user) %> </b> |
     <%= link_to "Log out", log_out_path %>  
   <% else %>  
     <%= link_to "Sign up", sign_up_path %> |   
