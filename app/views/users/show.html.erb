@@ -1,0 +1,15 @@
+<h1 style="text-align:center">
+  <%= @user.name %>
+</h1>
+ 
+<p>
+  <%= @user.email %>
+</p>
+ 
+<% if @user.posts.any? %>  
+
+  <h2>I have posts</h2>
+
+<% end %>
+
+<%= link_to 'Back to Posts', posts_path %> |

@@ -6,12 +6,10 @@ AuthLove::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"  
 
   get "sign_up" => "users#new", :as => "sign_up"  
-  get "posts" => "posts#index" #peter added this foolishly
-  get "users" => "users#index" #peter added this foolishly
 
   root :to => "posts#index"  
   
-  get ':name' => 'posts#index', :as => 'user_posts'
+  #get ':name' => 'posts#index', :as => 'user_posts'
   # because this line all my restful defualts won't work any more, how to fix?
   # from now on every thing after 3000/xxx will be params[:name]
   # so never put this before the above several lines
