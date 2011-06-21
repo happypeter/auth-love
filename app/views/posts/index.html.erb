@@ -1,5 +1,3 @@
-<h1 style="text-align:center">NEW</h1>
-
 <% if @posts != nil %>
   <% @posts.each do |post| %>
   <br />
@@ -18,9 +16,6 @@
 
 <% else %>
   No post found
-  <br \>
-  <%= link_to 'Back to Posts', posts_path %> 
 <% end %>
 </table>
 
- <%= link_to 'Post Your own card', new_post_path %>
