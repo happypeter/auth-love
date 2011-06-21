@@ -1,18 +1,15 @@
 <p>
   <div id = "comment_auth">
-        <i>
         <% if current_user && current_user.id == comment.user_id %>
-              <%= link_to '[destroy comment]', [comment.post, comment],
+              <%= link_to '[delete]', [comment.post, comment],
                            :confirm => 'are you sure?',
                            :method => :delete %>
         <% end %>
-        </i>
     commenter:
           <% @user = User.where(:id => comment.user_id ).first %>
           <%= @user.name %>
 
   </div>
-  
 </p>
  
 <p>

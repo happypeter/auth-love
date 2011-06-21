@@ -11,11 +11,9 @@
 
 <table  width="100%" >
 <tr>
-  <td >Happy News</td>
-
   <td>
   <%= link_to 'Submit', new_post_path %>
-  |<%= link_to 'News', posts_path %> |
+  | <%= link_to 'New', posts_path %>
   </td>
   <td style="text-align:right;">
     <% if current_user %>  
