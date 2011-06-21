@@ -17,8 +17,7 @@ class PostsController < ApplicationController
     end
   end
   def index
-      @posts = Post.all
-    end
+    @posts = Post.all
 
     respond_to do |format|
       format.html # index.html.erb
