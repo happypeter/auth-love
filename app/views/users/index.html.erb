@@ -1,0 +1,15 @@
+<h1 style="text-align:center">All users</h1>
+
+<% if @users != nil %>
+  <% @users.each do |user| %>
+  <%= user.name %>
+  <br \>
+  <% end %>
+
+<% else %>
+  No user found
+  <br \>
+  <%= link_to 'Back to Posts', posts_path %> 
+<% end %>
+</table>
+

@@ -7,6 +7,8 @@ AuthLove::Application.routes.draw do
 
   get "sign_up" => "users#new", :as => "sign_up"  
   get "posts" => "posts#index" #peter added this foolishly
+  get "users" => "users#index" #peter added this foolishly
+
   root :to => "posts#index"  
   
   get ':name' => 'posts#index', :as => 'user_posts'
