@@ -1,5 +1,5 @@
 <% if @posts != nil %>
-  <% @posts.each do |post| %>
+  <% @posts.reverse.each do |post| %>
   <br />
     <div id="card">
       <%= post.id %>. <%= link_to post.title, post%>
