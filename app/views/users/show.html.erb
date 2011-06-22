@@ -16,20 +16,12 @@ You have no post
 <% end %>
   
 <h2>My Comments:</h2>
+<% if @user.comments.any? %>  
 
-<% @comments=Comment.where(:user_id => @user.id) %> 
-<% if @comments.any? %>  
-  <% @comments.each do |comment| %>
-  <span class="comhead">
-    <%= comment.created_at %>
-    <% @post=Post.where(:id => comment.post_id).first %>
-    on: <%= link_to @post.title, post_path(@post)%>
-  </span>
-  <br \>
-  <%= comment.body%>
-  <br \>
-<% end %>
-<% else %>
-<p> You have no comment </p>
+  <h2>Comments</h2>
+  <%= render :partial => "comments/comment",
+             :collection => @user.comments %>
+   
+
 <% end %>
 
