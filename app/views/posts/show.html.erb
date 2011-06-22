@@ -18,9 +18,3 @@
 <h2>Add a comment:</h2>
 <%= render "comments/form" %>
  
-<br />
-<% if current_user %>
-  <% if current_user.id == @post.user_id %> 
-  <%= link_to 'Edit Post', edit_post_path(@post) %> 
-  <% end %>
-<% end %>
