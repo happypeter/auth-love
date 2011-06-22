@@ -1,7 +1,7 @@
 <p>
   <div>
         <span class="comhead">
-          <% @user = User.where(:id => comment.user_id ).first %>
+          <% @user = User.find(comment.user_id )%>
           <%= @user.name %>
           <%= comment.created_at %>
             <% if current_user && current_user.id == comment.user_id %>
