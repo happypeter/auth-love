@@ -20,7 +20,7 @@ You have no post
 
   <h2>Comments</h2>
   <%= render :partial => "comments/comment",
-             :collection => @user.comments %>
+             :collection => @user.comments.reverse %>
    
 
 <% end %>
