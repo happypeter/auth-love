@@ -16,30 +16,35 @@ a {text-decoration:none;}
 /*this is very important for me*/
 pre { margin-left: 3% }
 
-
-#comment_content
+#comment_head
+{
+background: #dbdbdb no-repeat;
+border-left: 9px;
+padding:8px 5px 8px 15px;
+}
+#comment_body
 {
 background: #f3f3f3 no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
 }
 
-#card
+#post_head
 {
 background: #dbdbdb no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
 }
+#post_body
+{
+background: #f3f3f3 no-repeat;
+border-left: 9px;
+padding:8px 5px 8px 15px;
+}
+
 /* <span class="comhead"> (mozilla.com) </span> */
 .comhead { font-family:Verdana; font-size:  8pt; color:#828282; }
 
-#comment_auth {
-  background:#EAEAEA;
-  padding:8px 5px 8px 15px;
-}
-#comment_body { 
-  padding:5px 15px;
-}
 
 /*
 a { color: #000; }

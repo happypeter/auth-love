@@ -19,14 +19,20 @@
 <% @comments=Comment.where(:user_id => @user.id) %> 
 <% if @comments.any? %>  
   <% @comments.each do |comment| %>
-    <span class="comhead">
-      <%= comment.created_at %>
-      <% @post=Post.where(:id => comment.post_id).first %>
-      on: <%= link_to @post.title, post_path(@post)%>
-    </span>
-    <br \>
-    <%= comment.body%>
-    <br \>
+  <div>
+    <div id="comment_head">
+      <span class="comhead">
+        <%= comment.created_at %>
+        <% @post=Post.where(:id => comment.post_id).first %>
+        on: <%= link_to @post.title, post_path(@post)%>
+      </span>
+      <br \>
+    </div>
+    <div id="comment_body">
+      <%= comment.body%>
+    </div>
+      <br \>
+  </div>
   <% end %>
 <% else %>
   <p> You have no comment </p>

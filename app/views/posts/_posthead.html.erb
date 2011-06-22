@@ -1,6 +1,6 @@
   <% @posts.reverse.each do |post| %>
   <br />
-    <div id="card">
+    <div id="post_head">
       <%= post.id %>. <%= link_to post.title, post%>
       <% @user = User.find(post.user_id )%>
       <span class="comhead">

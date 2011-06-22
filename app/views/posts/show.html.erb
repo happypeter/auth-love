@@ -1,7 +1,7 @@
 <!-- the code is same as post#index, need to DRY up, but don't know @post -> @posts -->
 <!-- since _posthead reads from @posts -->
 <div>
-  <div id="card">
+  <div id="post_head">
     <%= @post.id %>. <%= link_to @post.title, @post%>
     <% @user = User.find(@post.user_id )%>
     <span class="comhead">
@@ -16,7 +16,7 @@
     </span>
   </div>
  
-  <div id="comment_content">
+  <div id="post_body">
     <%= @post.content %>
   </div>
 </div>
