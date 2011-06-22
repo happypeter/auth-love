@@ -24,6 +24,8 @@
       <%= f.submit %>
     </div>
   <% else %>  
-   please  <%= link_to "Log in", log_in_path %> to post
+     <p>
+       <%= link_to "Log in", log_in_path %> to submit
+     </p>
   <% end %>  
 <% end %>
