@@ -17,6 +17,13 @@ a {text-decoration:none;}
 pre { margin-left: 3% }
 
 
+#comment_content
+{
+background: #f3f3f3 no-repeat;
+border-left: 9px;
+padding:8px 5px 8px 15px;
+}
+
 #card
 {
 background: #dbdbdb no-repeat;
