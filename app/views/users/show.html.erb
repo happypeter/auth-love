@@ -11,7 +11,7 @@
   <% @posts=Post.where(:user_id => @user.id) %> 
   <%= render 'posts/posthead' %>
 <% else %>
-  <p> You have no post </p>
+  <p> no submission </p>
 <% end %>
   
 <h2>Comments:</h2>
@@ -35,6 +35,6 @@
   </div>
   <% end %>
 <% else %>
-  <p> You have no comment </p>
+  <p> no comment </p>
 <% end %>
 
