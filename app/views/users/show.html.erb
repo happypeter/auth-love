@@ -7,13 +7,7 @@
 <% if @user.posts.any? %>  
 
   <% @posts=Post.where(:user_id => @user.id) %> 
-  <% @posts.each do |post| %>
-    <span class="comhead">
-      <%= post.created_at %>
-    </span> <br \>
-    <%= link_to post.title, post_path(post)%>
-    <br \>
-  <%end%>
+  <%= render 'posts/posthead' %>
 <% else %>
 <p> 
 You have no post 

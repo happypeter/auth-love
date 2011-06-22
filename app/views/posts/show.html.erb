@@ -1,4 +1,5 @@
-<!-- the code is same as post#index, need to DRY up -->
+<!-- the code is same as post#index, need to DRY up, but don't know @post -> @posts -->
+<!-- since _posthead reads from @posts -->
 <div id="card">
   <%= @post.id %>. <%= link_to @post.title, @post%>
   <% @user = User.find(@post.user_id )%>
