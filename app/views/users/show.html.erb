@@ -1,35 +1,32 @@
 <table border=0>
-<tr><td valign=top>user:</td><td><%= @user.name %></td></tr>
-<tr><td valign=top>email:</td><td><%= @user.email %></td></tr>
+<tr><td valign=top>Name:</td><td><%= @user.name %></td></tr>
+<tr><td valign=top>Email:</td><td><%= @user.email %></td></tr>
 </table>
 
-<h2>My Posts:</h2>
-<% if @user.posts.any? %>  
+<h2>Submissions:</h2>
 
+<% if @user.posts.any? %>  
   <% @posts=Post.where(:user_id => @user.id) %> 
   <%= render 'posts/posthead' %>
 <% else %>
-<p> 
-You have no post 
-</p>
-
+  <p> You have no post </p>
 <% end %>
   
-<h2>My Comments:</h2>
+<h2>Comments:</h2>
 
 <% @comments=Comment.where(:user_id => @user.id) %> 
 <% if @comments.any? %>  
   <% @comments.each do |comment| %>
-  <span class="comhead">
-    <%= comment.created_at %>
-    <% @post=Post.where(:id => comment.post_id).first %>
-    on: <%= link_to @post.title, post_path(@post)%>
-  </span>
-  <br \>
-  <%= comment.body%>
-  <br \>
-<% end %>
+    <span class="comhead">
+      <%= comment.created_at %>
+      <% @post=Post.where(:id => comment.post_id).first %>
+      on: <%= link_to @post.title, post_path(@post)%>
+    </span>
+    <br \>
+    <%= comment.body%>
+    <br \>
+  <% end %>
 <% else %>
-<p> You have no comment </p>
+  <p> You have no comment </p>
 <% end %>
 
