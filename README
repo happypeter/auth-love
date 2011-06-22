@@ -18,6 +18,15 @@
  - so on and so forth, you get whatever you need, really neat
 
 # RELEASE NOTES
+v0.3 release note:
+
+ - /username gives a user homepage
+ - /users  gives a user list ( maybe give a sorting by karma is a good idea?)
+ - /nonexsitname gives a error msg and redirect to root_url
+ - more HackerNews feathers and style
+ - done with most what I want 
+ - no obvious bug 
+
 v0.2 release note:
 
  - comments put into concern
