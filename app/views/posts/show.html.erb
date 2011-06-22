@@ -1,25 +1,23 @@
 <!-- the code is same as post#index, need to DRY up, but don't know @post -> @posts -->
 <!-- since _posthead reads from @posts -->
-<div>
-  <div id="card">
-    <%= @post.id %>. <%= link_to @post.title, @post%>
-    <% @user = User.find(@post.user_id )%>
-    <span class="comhead">
-    <br \>
-    (
-    by <%= link_to  @user.name, user_path(@user) %> <%= @post.created_at %>
-    <% if current_user && current_user.id == @post.user.id  %>
-      <%= link_to 'Edit', edit_post_path(@post) %>|
-      <%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %>
-    <% end %>
-    )
-    </span>
-  </div>
- 
-  <div id="comment_content">
-    <%= @post.content %>
-  </div>
+<div id="card">
+  <%= @post.id %>. <%= link_to @post.title, @post%>
+  <% @user = User.find(@post.user_id )%>
+  <span class="comhead">
+  <br \>
+  (
+  by <%= link_to  @user.name, user_path(@user) %> <%= @post.created_at %>
+  <% if current_user && current_user.id == @post.user.id  %>
+    <%= link_to 'Edit', edit_post_path(@post) %>|
+    <%= link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete %>
+  <% end %>
+  )
+  </span>
 </div>
+ 
+<p>
+  <%= @post.content %>
+</p>
  
 <% if @post.comments.any? %>  
 
