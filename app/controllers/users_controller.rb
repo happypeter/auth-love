@@ -21,7 +21,6 @@ end
 
     respond_to do |format|
       format.html # index.html.erb
-      format.xml  { render :xml => @posts }
     end
   end
   def show
@@ -30,8 +29,11 @@ end
     else
       @user = User.find(params[:id])
     end
-    respond_to do |format|
-      format.html # show.html.erb
-      format.xml  { render :xml => @post }
-   end
+    if @user == nil
+      redirect_to root_url, :notice => "no such user!"  
+    else
+      respond_to do |format|
+        format.html # show.html.erb
+    end
   end
+end
