@@ -13,7 +13,12 @@
 <tr>
   <td>
   <%= link_to 'Submit', new_post_path %>
-  | <%= link_to 'New', posts_path %>
+  | <%= link_to 'All', posts_path %>
+  </td>
+  <td style="color:#ffffff">
+    <% flash.each do |name, msg| %>  
+       <%= content_tag :div, msg, :id => "flash#{name}" %>  
+    <% end %>  
   </td>
   <td style="text-align:right;">
     <% if current_user %>  
@@ -23,9 +28,6 @@
     <% else %>  
       <%= link_to "Sign up", sign_up_path %> |   
       <%= link_to "Log in", log_in_path %>  
-    <% end %>  
-    <% flash.each do |name, msg| %>  
-       <%= content_tag :div, msg, :id => "flash#{name}" %>  
     <% end %>  
   </td>
 </tr>
