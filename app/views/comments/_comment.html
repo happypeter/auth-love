@@ -1,21 +1,20 @@
 <div>
   <div id="comment_head">
-        <span class="comhead">
-          <% @user = User.find(comment.user_id )%>
-          <%= @user.name %>
-          <%= comment.created_at %>
-            <% if current_user && current_user.id == comment.user_id %>
-                  <%= link_to 'Delete', [comment.post, comment],
-                               :confirm => 'are you sure?',
-                               :method => :delete %>
-            <% end %>
-        </span>
-        <br \>
+     <span class="comhead">
+       <% @user = User.find(comment.user_id )%>
+       <%= @user.name %>
+       <%= comment.created_at %>
+       <% if current_user && current_user.id == comment.user_id %>
+          <%= link_to 'Delete', [comment.post, comment],
+                       :confirm => 'are you sure?',
+                       :method => :delete %>
+       <% end %>
+     </span>
+     <br \>
    </div>
-  
   <div id="comment_body">
-  <%= comment.body %>
+    <%= comment.body %>
   </div>
- 
+  <br \>
 </div>
  
