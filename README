@@ -1,12 +1,20 @@
 # DESIGN
 
- - a ticketing system like http://news.ycombinator.com/
- - authlove.com/yourname   shows all your own posts
+ - a ticket system like http://news.ycombinator.com/
+ - authlove.com/yourname   shows all your own tickets and comments
+ - inspired by railscasts:episodes#create, I want users and myself(mainly myself), to upload videos, audios, pics
+
+    - railscasts have a note for each video, I can have this by having the ticket text(markdown-backed)
+    - be it a audios or pics or anything, the ticket model won't get complex, all are of one type, "attachedfile"
+      with name a location
+    - then I get whatever I want: blog, forum, railscasts,... all as tickets, so I need a tagging system
+    - and even some hard-coded nav pages if necessary, 
+      say happycasts, by choosing only tickets with tag: video&&vim plug author=happypeter
+    - now user and I are all equal, we are all people who can submit one thing: a ticket
+
  - echo ticket will be given a unique number, and let's see how
    big the number will grow, and the biggest number will show on top like railscasts.com
    rather then the Hacker News 1,2,3,4... style
- - when there are more than 100 tickets, maybe I will add search or tags to
-   all the tickets to have people find stuff 
  - it is not twitter, it is not HN, and I will still keep my blog, the system will start simply as 
    a newer ticket sits on top of the rest older ones, then what's on the tickets? Anything, be it a 
    question from my students on vim or git, be it any other topic
