@@ -13,6 +13,7 @@ AuthLove::Application.routes.draw do
     resources :posts
   end
   resources :sessions
+  resources :nav
   resources :posts do
     resources :comments
   end
