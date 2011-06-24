@@ -15,7 +15,7 @@
      <br \>
    </div>
   <div id="comment_body">
-    <%= comment.body %>
+    <%= raw Maruku.new(comment.body.to_s).to_html %>
   </div>
   <br \>
 </div>
