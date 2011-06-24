@@ -1,0 +1,2 @@
+module NavHelper
+end
