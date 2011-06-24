@@ -5,7 +5,9 @@
 </table>
 </p>
 <% if @user.id == current_user.id %>
-<%= link_to "update profile", edit_user_path(@user)%>
+  <span class="comhead">
+    <%= link_to "Edit", edit_user_path(@user)%>
+  </span>
 <% end %>
 
 <h2>Submissions:</h2>
