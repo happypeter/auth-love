@@ -1,3 +1,8 @@
+## markdown
+I don't know, so I checked the jekyll code and I know:
+
+jekyll->markdown->maruku->syntax(not coderay)
+
 ## file upload
 http://railsillustrated.com/posts/file-upload-progress-bars.mov
 
