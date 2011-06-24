@@ -4,7 +4,9 @@
 <tr><td valign=top>Email:</td><td><%= @user.email %></td></tr>
 </table>
 </p>
+<% if @user.id == current_user.id %>
 <%= link_to "update profile", edit_user_path(@user)%>
+<% end %>
 
 <h2>Submissions:</h2>
 
