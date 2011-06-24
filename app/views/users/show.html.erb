@@ -4,6 +4,7 @@
 <tr><td valign=top>Email:</td><td><%= @user.email %></td></tr>
 </table>
 </p>
+<%= link_to "update profile", edit_user_path(@user)%>
 
 <h2>Submissions:</h2>
 
@@ -29,7 +30,7 @@
       <br \>
     </div>
     <div id="comment_body">
-      <%= comment.body%>
+      <%= raw Maruku.new(comment.body.to_s).to_html%>
     </div>
       <br \>
   </div>

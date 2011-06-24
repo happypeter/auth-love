@@ -1,6 +1,27 @@
 class UsersController < ApplicationController  
+  before_filter :check_perm, :only => [ :edit, :update, :destroy ]
+
+  def check_perm
+    @user = User.find(params[:id])
+    if current_user == nil
+      flash[:notice] = "Sorry, plz login first"
+      redirect_to posts_path
+    elsif @user.id != current_user.id 
+      flash[:notice] = "Sorry, you are not allowed to edit other's profile"
+      redirect_to posts_path
+    end
+  end
   def new  
     @user = User.new  
+  end
+
+  def edit
+  end
+
+  def update
+    @user.attributes = params[:user]
+    @user.save!                
+    redirect_to @user, :notice => "Successfully updated profile."                                                         
   end  
     
   def create  
