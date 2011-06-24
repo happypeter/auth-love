@@ -4,7 +4,10 @@ class User < ActiveRecord::Base
   has_many :posts
     
   validates_confirmation_of :password  
-  validates_presence_of :password, :on => :create  
+  validates_presence_of :password, :on => :create
+  # I don't want: validates_presence_of :password, :on => :update
+  # if a user leave the password file blank, then the passwd won't be
+  # changed
   validates_presence_of :name  
   validates_uniqueness_of :name  
 
