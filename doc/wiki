@@ -56,6 +56,35 @@ things works, development db is in use now
 
 to see the log file, learned form railscasts.com:122
 
+## phpmyadmin
+
+so I have to set another VirtualHost, and put it BEFORE "LoadModule passenger", now
+have "phpad.com" in /etc/hosts on my real machine, so it works, when call the same ip 
+with http://phpad.com/, refer to :http://httpd.apache.org/docs/2.2/vhosts/name-based.html
+
+
+this is my httpd.conf
+
+    <VirtualHost *:80>
+       ServerName phpad.com
+       DocumentRoot /usr/share/phpmyadmin/ 
+    </VirtualHost>
+    LoadModule passenger_module /home/peter/.rvm/gems/ruby-1.9.2-p180/gems/passenger-3.0.7/ext/apache2/mod_passenger.so
+    PassengerRoot /home/peter/.rvm/gems/ruby-1.9.2-p180/gems/passenger-3.0.7
+    PassengerRuby /home/peter/.rvm/wrappers/ruby-1.9.2-p180/ruby
+
+    NameVirtualHost *:80
+
+    <VirtualHost *:80>
+       ServerName sme.com
+       DocumentRoot /home/peter/auth-love/public/ 
+       RailsEnv development
+       <Directory /home/peter/auth-love/public/>
+          AllowOverride all             
+          Options -MultiViews          
+       </Directory>
+    </VirtualHost>
+
 
 ## markdown
 I don't know, so I checked the jekyll code and I know:
