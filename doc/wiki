@@ -8,6 +8,15 @@ A: I think when I check the Gemfile.lock,
    mysql2 (0.2.6) 
 
 was in railscats one, now I see its becasue railscasts was depolied long time ago, so mysql2 was installed as the lower version, and then was locked, so "bundle install" just instlled the old one.
+
+ERROR: when rake db:createi
+
+    Can't connect to local MySQL server through socket '/tmp/mysql.sock 
+
+The fix:
+
+   change ../config/database.yml and have the socket location in /etc/mysql/my.cnf
+
 ## markdown
 I don't know, so I checked the jekyll code and I know:
 
