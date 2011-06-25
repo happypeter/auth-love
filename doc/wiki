@@ -52,6 +52,10 @@ finally have this in httpd.conf:
 
 things works, development db is in use now
 
+    tail -f log/development.log 
+
+to see the log file, learned form railscasts.com:122
+
 
 ## markdown
 I don't know, so I checked the jekyll code and I know:
