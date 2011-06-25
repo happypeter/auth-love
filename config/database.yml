@@ -9,7 +9,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: railscasts_development
+  database: authlove_development
   pool: 5
   username: root
   password:
@@ -22,7 +22,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: railscasts_test
+  database: authlove_test
   pool: 5
   username: root
   password:
@@ -32,7 +32,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: railscasts_production
+  database: authlove_production
   pool: 5
   username: root
   password:
