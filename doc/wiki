@@ -31,6 +31,28 @@ the two warnings does not hurt:
     apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
     [Sat Jun 25 17:01:18 2011] [warn] NameVirtualHost *:80 has no VirtualHosts
 
+finally have this in httpd.conf:
+
+
+    LoadModule passenger_module /home/peter/.rvm/gems/ruby-1.9.2-p180/gems/passenger-3.0.7/ext/apache2/mod_passenger.so
+    PassengerRoot /home/peter/.rvm/gems/ruby-1.9.2-p180/gems/passenger-3.0.7
+    PassengerRuby /home/peter/.rvm/wrappers/ruby-1.9.2-p180/ruby
+
+    NameVirtualHost *:80
+
+    <VirtualHost *:80>
+       ServerName www.yourhost.com
+       DocumentRoot /home/peter/auth-love/public/ 
+       RailsEnv development
+       <Directory /home/peter/auth-love/public/>
+          AllowOverride all             
+          Options -MultiViews          
+       </Directory>
+    </VirtualHost>
+
+things works, development db is in use now
+
+
 ## markdown
 I don't know, so I checked the jekyll code and I know:
 
