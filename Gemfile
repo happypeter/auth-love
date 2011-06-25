@@ -9,6 +9,8 @@ gem 'maruku'
 
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'sqlite3'
+gem 'mysql2', '< 0.3'
+
 
 # Use unicorn as the web server
 # gem 'unicorn'
