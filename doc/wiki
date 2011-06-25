@@ -1,3 +1,13 @@
+## mysql 
+
+Q: About the mysql-adapter issue, it was strange for me, why in railscasts
+it is just "mysql" in it, while my authlove has to have "mysql <0.3" in Gemfile
+
+A: I think when I check the Gemfile.lock,     
+
+   mysql2 (0.2.6) 
+
+was in railscats one, now I see its becasue railscasts was depolied long time ago, so mysql2 was installed as the lower version, and then was locked, so "bundle install" just instlled the old one.
 ## markdown
 I don't know, so I checked the jekyll code and I know:
 
