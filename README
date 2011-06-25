@@ -26,6 +26,11 @@
  - so on and so forth, you get whatever you need, really neat
 
 # RELEASE NOTES
+v0.4 release note:
+ - add markdown support 
+ - change profile possible now
+ - using HN logo, upside down
+
 v0.3 release note:
 
  - /username gives a user homepage
