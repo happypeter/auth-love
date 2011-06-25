@@ -17,6 +17,20 @@ The fix:
 
    change ../config/database.yml and have the socket location in /etc/mysql/my.cnf
 
+## passenger
+
+just follow the lead of 
+
+    passenger-install-apache2-module 
+
+NOTE: don't put "#" comment lines into httpd.conf, error on syntax
+
+the two warnings does not hurt:
+
+    root@server-me:/etc/apache2# apachectl -S
+    apache2: Could not reliably determine the server's fully qualified domain name, using 127.0.1.1 for ServerName
+    [Sat Jun 25 17:01:18 2011] [warn] NameVirtualHost *:80 has no VirtualHosts
+
 ## markdown
 I don't know, so I checked the jekyll code and I know:
 
