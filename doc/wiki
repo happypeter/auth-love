@@ -16,6 +16,11 @@ ERROR: when rake db:createi
 The fix:
 
    change ../config/database.yml and have the socket location in /etc/mysql/my.cnf
+ 
+## don't use phpmyadmin to delete posts entry
+
+because the comments belong to it won't be deleted, and thus a error when you try to list
+user homepage, then a comment who's master post was delelted will produce a error.
 
 ## passenger
 

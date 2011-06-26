@@ -28,7 +28,7 @@
     <div id="comment_head">
       <span class="comhead">
         <%= comment.created_at %>
-        <% @post=Post.where(:id => comment.post_id).first %>
+        <% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
       </span>
       <br \>
