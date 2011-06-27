@@ -1,6 +1,7 @@
 <% content_for :title, "All" %>
 <% if @posts != nil %>
 
+  <%= render 'posthead' %>
   <%= will_paginate @posts %>
 <% else %>
   No post found
