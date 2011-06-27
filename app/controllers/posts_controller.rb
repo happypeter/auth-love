@@ -14,7 +14,7 @@ class PostsController < ApplicationController
     end
   end
   def index
-    @posts = Post.paginate :page => params[:page]
+    @posts = Post.paginate :per_page => 3, :page => params[:page]
 
     respond_to do |format|
       format.html # index.html.erb
