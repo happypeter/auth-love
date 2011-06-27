@@ -1,13 +1,12 @@
 <% content_for :title, "All" %>
 
-<% if @posts != nil %>
+<% if @posts.empty? %>
 
-
+  No post found
+<% else %>
   <%= render 'posthead' %>
   <p>
   <%= will_paginate :previous_label => h("< Previous Page"),  :next_label => h("Next Page >") %>
   </p>
-<% else %>
-  No post found
 <% end %>
 
