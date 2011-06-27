@@ -14,9 +14,13 @@ class PostsController < ApplicationController
     end
   end
   def index
-    @posts = Post.all.reverse
+    if params[:search]
+      @posts = Post.search(params[:search], params[:page])
+    else
+      @posts = Post.all.reverse
+      @posts = @posts.paginate :per_page => 5, :page => params[:page]
+    end
 
-    @posts = @posts.paginate :per_page => 5, :page => params[:page]
 
 
     respond_to do |format|

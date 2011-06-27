@@ -1,8 +1,18 @@
 <% content_for :title, "All" %>
+<% form_tag request.path, :method => 'get' do %>
+  <% content_tag :label do %>
+    Search term:
+    <%= text_field_tag :search, params[:search] %>
+  <% end %>
+<% end %>
+
 <% if @posts != nil %>
 
+
   <%= render 'posthead' %>
-  <%= will_paginate @posts %>
+  <p>
+  <%= will_paginate :previous_label => h("< Previous Page"),  :next_label => h("Next Page >") %>
+  </p>
 <% else %>
   No post found
 <% end %>
