@@ -5,6 +5,7 @@ AuthLove::Application.routes.draw do
   # get a strange error: No route matches "/log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"  
   match "about" => "nav#about", :as => "about"
+  match "markdown" => "nav#markdown", :as => "markdown"
 
   get "sign_up" => "users#new", :as => "sign_up"  
 
