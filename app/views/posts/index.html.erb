@@ -1,8 +1,4 @@
 <% content_for :title, "All" %>
- <%= form_tag posts_path, :method => "get" do %>
-        <%= text_field_tag :search, params[:search], :size => 35 %>
-        <%= submit_tag "Search Episodes", :name => nil %>
- <% end %>
 
 <% if @posts != nil %>
 
