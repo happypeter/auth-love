@@ -1,6 +1,5 @@
-  <%= will_paginate @posts %>
 
-  <% @posts.reverse.each do |post| %>
+  <% @posts.each do |post| %>
   <br />
     <div id="post_head">
       <%= post.id %>. <%= link_to post.title, post%>
