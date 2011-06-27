@@ -11,7 +11,8 @@ class Post < ActiveRecord::Base
   belongs_to :user
   def self.search(search, page)
     paginate :per_page => 5, :page => page,
-             :conditions => ['title like ?', "%#{search}%"], :order => 'title'
+             :conditions => ['title like ?', "%#{search}%"], 
+             :order => 'id DESC' #DESC: list in reverse order
   end
 
 end
