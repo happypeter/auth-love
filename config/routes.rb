@@ -4,6 +4,7 @@ AuthLove::Application.routes.draw do
   # if you use POST to sent '/login', you need the above line, otherwise you
   # get a strange error: No route matches "/log_in"
   get "log_out" => "sessions#destroy", :as => "log_out"  
+  match "about" => "nav#about", :as => "about"
 
   get "sign_up" => "users#new", :as => "sign_up"  
 
