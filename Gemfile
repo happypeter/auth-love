@@ -5,6 +5,9 @@ gem 'rake', '0.8.7'
 gem 'maruku'
 gem "will_paginate", "~> 3.0.pre2"
 
+gem 'redcarpet'
+gem 'albino'
+gem 'nokogiri'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

@@ -17,7 +17,7 @@
   </div>
  
   <div id="post_body">
-    <%= raw Maruku.new(@post.content.to_s).to_html %>
+    <%= markdown(@post.content) %>
   </div>
 </div>
  
