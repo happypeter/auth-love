@@ -90,3 +90,9 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+/*** CODE BLOCKS ***/
+
+
+.kt { color:#00ff00; }
+.s  { color:#ff6060; }
