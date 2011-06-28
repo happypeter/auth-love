@@ -1,3 +1,10 @@
+## wiki
+
+Gollum is a simple wiki system built on top of Git that powers GitHub Wikis.
+
+I want this, it could be especaillly useful when you want the audience change your book.
+having this, they no longer need to clone your repo first
+
 ## mysql 
 
 Q: About the mysql-adapter issue, it was strange for me, why in railscasts
