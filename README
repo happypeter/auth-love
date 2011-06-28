@@ -26,6 +26,13 @@
  - so on and so forth, you get whatever you need, really neat
 
 # RELEASE NOTES
+
+v0.5 release note:
+ - code hilighting
+ - new markdown engine-- redcarpet
+ - set up to apache virtualhost--for phpmyadmin
+ - will_paginate
+
 v0.4 release note:
  - add markdown support 
  - change profile possible now
