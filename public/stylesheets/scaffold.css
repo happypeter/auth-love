@@ -96,3 +96,24 @@ div.field, div.actions {
 
 .kt { color:#00ff00; }
 .s  { color:#ff6060; }
+
+
+/*** PAGINATION ***/
+
+.pagination {
+  margin: 8px 0;
+  font-size: 12px;
+}
+
+.pagination .disabled {
+  color: #999;
+ }
+
+.pagination em {
+  font-style: normal;
+}
+
+.pagination a, .pagination em, .pagination .previous_page, .pagination .next_page {
+   padding: 4px;
+}
+
