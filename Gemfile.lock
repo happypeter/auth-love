@@ -33,8 +33,10 @@ GEM
     arel (2.0.10)
     bcrypt-ruby (2.1.4)
     builder (2.1.2)
+    daemon_controller (0.2.6)
     erubis (2.6.6)
       abstract (>= 1.0.0)
+    fastthread (1.0.7)
     i18n (0.5.0)
     mail (2.2.19)
       activesupport (>= 2.3.6)
@@ -44,6 +46,11 @@ GEM
     mime-types (1.16)
     mysql2 (0.2.11)
     nokogiri (1.4.5)
+    passenger (3.0.7)
+      daemon_controller (>= 0.2.5)
+      fastthread (>= 1.0.1)
+      rack
+      rake (>= 0.8.1)
     polyglot (0.3.1)
     posix-spawn (0.3.6)
     rack (1.2.3)
@@ -81,6 +88,7 @@ DEPENDENCIES
   bcrypt-ruby
   mysql2 (< 0.3)
   nokogiri
+  passenger
   rails (= 3.0.7)
   rake (= 0.8.7)
   redcarpet

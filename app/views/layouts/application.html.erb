@@ -4,7 +4,7 @@
 <head>
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
  
-  <title>HappyNews|<%= content_for?(:title) ? yield(:title) : "HappyNews" %> </title>
+  <title><%= content_for?(:title) ? yield(:title) : "HappyNews" %> </title>
   <link rel="shortcut icon" href="/images/favicon.ico"/>
   <%= stylesheet_link_tag :all %>
   <%= javascript_include_tag :defaults %>

@@ -7,6 +7,7 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
+gem 'passenger'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
