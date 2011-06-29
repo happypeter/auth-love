@@ -1,0 +1,10 @@
+<% content_for :title, "comments" %>
+
+<% if @comments.empty? %>
+
+  No post found
+<% else %>
+  <%= render 'usershowcomment' %>
+  <%= will_paginate :previous_label => h("< Previous Page"),  :next_label => h("Next Page >") %>
+<% end %>
+

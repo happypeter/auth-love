@@ -1,4 +1,19 @@
 class CommentsController < ApplicationController
+  def index
+    if params[:search]
+      @comments = Comment.search(params[:search], params[:page])
+    else
+      @comments = Comment.all.reverse
+      @comments = @comments.paginate :per_page => 5, :page => params[:page]
+    end
+
+
+
+    respond_to do |format|
+      format.html # index.html.erb
+      format.xml  { render :xml => @comments }
+    end
+  end
  
   def create
     @post = Post.find(params[:post_id])

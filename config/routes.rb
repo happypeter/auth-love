@@ -19,6 +19,7 @@ AuthLove::Application.routes.draw do
   resources :posts do
     resources :comments
   end
+  resources :comments ## will this confilcts with about nested one
   get ':name' => 'users#show', :as => 'user_home'
 end  
   # The priority is based upon order of creation:
