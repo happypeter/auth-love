@@ -21,8 +21,7 @@
   </td>
   <td>
   <%= link_to 'Submit', new_post_path %>
-  | <%= link_to 'All', posts_path %> |
-  <%= link_to 'nav', '/nav' %>
+  | <%= link_to 'All', posts_path %> 
   </td>
   <td style="text-align:center;color:#fff00f">
     <% flash.each do |name, msg| %>  
@@ -46,7 +45,7 @@
 <table width="100%" cellspacing=0 cellpadding=1><tr><td bgcolor=#ff6600></td></tr></table><br>
 <table  width="100%">
 <tr>
-<a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %>
+<a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %>| <%= link_to "users", users_path %>
 </tr>
 </table>
 
