@@ -13,7 +13,7 @@
       <%= post.created_at %>
       <% if current_user && current_user.id == post.user.id  %>
         <%= link_to 'Edit', edit_post_path(post) %>|
-        <%= link_to 'Delete', post, :confirm => 'Are you sure?', :method => :delete %>
+        <%= link_to 'Delete', post, :confirm => 'Delete post! are you sure?', :method => :delete %>
       <% end %>
       )
       </span>
