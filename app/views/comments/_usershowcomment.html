@@ -3,6 +3,8 @@
   <div>
     <div id="comment_head">
       <span class="comhead">
+       <% @user = User.find(comment.user_id )%>
+       by <%= link_to @user.name, user_path(@user) %> 
         <%= comment.created_at %>
         <% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
