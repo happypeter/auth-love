@@ -27,6 +27,11 @@
 
 # RELEASE NOTES
 
+v0.6 release note:
+ - nicer <title>
+ - eidts comments is now possible
+ - fix user#show error, when  current_user is nil
+
 v0.5 release note:
  - code hilighting
  - new markdown engine-- redcarpet
