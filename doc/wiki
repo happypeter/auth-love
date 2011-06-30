@@ -1,4 +1,8 @@
-## wiki
+#NOTE:
+
+python-pygments is not installed, your code block will be lost
+
+## git-backed wiki
 
 Gollum is a simple wiki system built on top of Git that powers GitHub Wikis.
 

@@ -5,6 +5,7 @@ module ApplicationHelper
   end
 
   def syntax_highlighter(html)
+    #DO install pygment first, bundler won't take care of this for you
     doc = Nokogiri::HTML(html)
     doc.search("//pre[@lang]").each do |pre|
       pre.replace Albino.colorize(pre.text.rstrip, pre[:lang])
