@@ -1,4 +1,21 @@
 class CommentsController < ApplicationController
+  before_filter :check_perm, :only => [ :edit, :update, :destroy ]
+
+  def check_perm
+    # the check_perm here is not really very necessary, since if the reader is
+    # not allowed to edit or delelte the comment, he won't even see the
+    # links(hided in view), 
+    # still this is nice to have as guardian code.
+    @post = Post.find(params[:post_id])
+    @comment = @post.comments.find(params[:id])
+    if current_user == nil
+      flash[:notice] = "Sorry, you are not allowed to edit or destory this post"
+      redirect_to posts_path
+    elsif @comment.user_id != current_user.id 
+      flash[:notice] = "Sorry, you are not allowed to edit or destory this post"
+      redirect_to posts_path
+    end
+  end
   def index
     if params[:search]
       @comments = Comment.search(params[:search], params[:page])
@@ -28,12 +45,8 @@ class CommentsController < ApplicationController
     end
   end
   def edit
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
   end
   def update
-    @comment = Comment.find(params[:id])
-    @post = Post.find(@comment.post_id)
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
         format.html { redirect_to(@post, :notice => 'Post was successfully updated.') } 
@@ -46,8 +59,6 @@ class CommentsController < ApplicationController
   end
  
   def destroy
-    @post = Post.find(params[:post_id])
-    @comment = @post.comments.find(params[:id])
     @comment.destroy
     redirect_to post_path(@post)
   end
