@@ -31,6 +31,19 @@ class CommentsController < ApplicationController
     @post = Post.find(params[:post_id])
     @comment = @post.comments.find(params[:id])
   end
+  def update
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      if @comment.update_attributes(params[:comment])
+        format.html { redirect_to(root_url, :notice => 'Post was successfully updated.') } 
+        #FIXME: how to get @post so thant I can redirect_to @post
+        format.xml  { head :ok }
+      else
+        format.html { render :action => "edit" }
+        format.xml  { render :xml => @post.errors, :status => :unprocessable_entity }
+      end
+    end
+  end
  
   def destroy
     @post = Post.find(params[:post_id])
