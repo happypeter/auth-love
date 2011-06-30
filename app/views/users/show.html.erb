@@ -5,10 +5,13 @@
 <tr><td valign=top>Email:</td><td><%= @user.email %></td></tr>
 </table>
 </p>
-<% if @user.id == current_user.id %>
-  <span class="comhead">
-    <%= link_to "Edit", edit_user_path(@user)%>
-  </span>
+<% if @user != nil && current_user != nil %>
+  <!-- the below line produces error, if above condition does not meet -->
+  <% if @user.id == current_user.id %>
+    <span class="comhead">
+      <%= link_to "Edit", edit_user_path(@user)%>
+    </span>
+  <% end %>
 <% end %>
 
 <h2>Submissions:</h2>
