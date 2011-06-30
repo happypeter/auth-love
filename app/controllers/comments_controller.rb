@@ -33,10 +33,10 @@ class CommentsController < ApplicationController
   end
   def update
     @comment = Comment.find(params[:id])
+    @post = Post.find(@comment.post_id)
     respond_to do |format|
       if @comment.update_attributes(params[:comment])
-        format.html { redirect_to(root_url, :notice => 'Post was successfully updated.') } 
-        #FIXME: how to get @post so thant I can redirect_to @post
+        format.html { redirect_to(@post, :notice => 'Post was successfully updated.') } 
         format.xml  { head :ok }
       else
         format.html { render :action => "edit" }
