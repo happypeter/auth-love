@@ -37,7 +37,8 @@ class UsersController < ApplicationController
  # the users#create will be called
     @user = User.new(params[:user])  
     if @user.save  
-      redirect_to root_url, :notice => "Signed up!"  
+      session[:user_id] = @user.id # the session here, has nothing to do with the controller name Sessions, I will test this by using another controller name tommorrow! 
+      redirect_to user_path(@user), :notice => "signed up!"  
     else  
       render "new"  
     end  
