@@ -34,6 +34,7 @@ having this, they no longer need to clone your repo first
 
 ## mysql 
 
+
 Q: About the mysql-adapter issue, it was strange for me, why in railscasts
 it is just "mysql" in it, while my authlove has to have "mysql <0.3" in Gemfile
 
@@ -50,7 +51,16 @@ ERROR: when rake db:createi
 The fix:
 
    change ../config/database.yml and have the socket location in /etc/mysql/my.cnf
+### mysql commands
+
+Delete a row(s) from a table.
+
+    mysql> DELETE from [table name] where [field name] = 'whatever';
  
+clear user's password_hash
+
+   mysql> update users set password_hash="" where id=1;
+
 ## don't use phpmyadmin to delete posts entry
 
 because the comments belong to it won't be deleted, and thus a error when you try to list
