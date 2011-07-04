@@ -195,3 +195,13 @@ pre {
 }
 
 
+
+/* others */
+
+blockquote {
+  margin: 0;
+  padding-left: 10px;
+  border-left: solid 5px #CCC;
+  color: #777;
+}
+
