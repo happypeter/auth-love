@@ -92,10 +92,30 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+/*** Markdown example **/
+
+.markdown_examples {
+  margin-top: 5px;
+}
+
+.markdown_examples table {
+  border-collapse: collapse;
+}
+
+.markdown_examples table td {
+  border: solid 1px #CCC;
+  padding: 2px 10px;
+}
+
+.markdown_examples .code_block {
+  width: 200px;
+}
+
 
 /*** CODE BLOCKS ***/
-pre {
+.highlight {
   font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+  margin: 10px;
   background-color: #232323;
   color: #E6E0DB;
 }
@@ -106,7 +126,7 @@ pre {
 
 .an { color:#E7BE69 }                      /* html attribute */
 .cm { color:#BC9358; font-style: italic; } /* comment */
-.se { color:#BC9358; }                     /* comment */
+.c1 { color:#BC9358; }                     /* comment */
 .ch { color:#509E4F }                      /* escaped character */
 .mi { color:#FFF }                         /* constant */
 .fl { color:#A4C260 }                      /* float */
