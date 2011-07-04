@@ -126,7 +126,7 @@ pre {
 
 .an { color:#E7BE69 }                      /* html attribute */
 .cm { color:#BC9358; font-style: italic; } /* comment */
-.c1 { color:#BC9358; }                     /* comment */
+.c1 { color:#BC9358; font-style: italic; } /* comment */
 .ch { color:#509E4F }                      /* escaped character */
 .mi { color:#FFF }                         /* constant */
 .fl { color:#A4C260 }                      /* float */
