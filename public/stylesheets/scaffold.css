@@ -94,11 +94,35 @@ div.field, div.actions {
 }
 
 /*** CODE BLOCKS ***/
+pre {
+  font-family: 'Menlo', 'Courier New', 'Terminal', monospace;
+  background-color: #232323;
+  color: #E6E0DB;
+}
+pre {
+  margin: 0px;
+  padding: 0px;
+}
 
-
-.kt { color:#00ff00; }
-.s  { color:#ff6060; }
-
+.an { color:#E7BE69 }                      /* html attribute */
+.cm { color:#BC9358; font-style: italic; } /* comment */
+.se { color:#BC9358; }                     /* comment */
+.ch { color:#509E4F }                      /* escaped character */
+.co { color:#FFF }                         /* constant */
+.fl { color:#A4C260 }                      /* float */
+.fu { color:#FFC56D }                      /* function */
+.gv { color:#D0CFFE }                      /* global variable */
+.i  { color:#A4C260 }                      /* integer */
+.il { background:#151515 }                 /* inline code */
+.iv { color:#D0CFFE }                      /* instance variable */
+.pp { color:#E7BE69 }                      /* doctype */
+.r  { color:#CB7832 }                      /* keyword */
+.kw { color:#CB7832 }                      /* keyword */
+.rx { color:#A4C260 }                      /* regex */
+.s  { color:#A4C260 }                      /* string */
+.sy { color:#6C9CBD }                      /* symbol */
+.ta { color:#E7BE69 }                      /* html tag */
+.pc { color:#6C9CBD }                      /* boolean */
 
 /*** PAGINATION ***/
 
