@@ -120,8 +120,8 @@ div.field, div.actions {
   color: #E6E0DB;
 }
 pre {
-  margin: 0px;
-  padding: 0px;
+  margin: 9px;
+  padding: 9px;
 }
 
 .an { color:#E7BE69 }                      /* html attribute */
