@@ -31,15 +31,21 @@
                 <tr>
                   <td>
                     <pre>
-```c 
+```c
 #include <stdio.h>
 
 int main(int argc, const char *argv[])
 {
-  printf("hello everyone!\n");
-  return 0;
+    printf("hello everyone!\n");
+    return 0;
 }
 ```
+
+`return 0;` is necessary here
+
+ use **gcc** to compile it 
+
+    gcc -o hello hello.c
                     </pre>
                   </td>
                   <td><%= raw markdown(render "hello") %></td>
