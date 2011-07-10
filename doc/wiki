@@ -61,6 +61,15 @@ clear user's password_hash
 
    mysql> update users set password_hash="" where id=1;
 
+how to restore a db:
+
+    mysql> create database authlove_development;
+    Query OK, 1 row affected (0.00 sec)
+
+    peter@server-me:~/happynewsdb$ mysql -uroot authlove_development<authlove_development.sql 
+
+that's all
+
 ## don't use phpmyadmin to delete posts entry
 
 because the comments belong to it won't be deleted, and thus a error when you try to list
