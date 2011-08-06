@@ -59,6 +59,7 @@ Delete a row(s) from a table.
  
 clear user's password_hash
 
+   mysql> use authlove_development;
    mysql> update users set password_hash="" where id=1;
 
 how to restore a db:
