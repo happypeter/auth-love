@@ -23,7 +23,8 @@ BE sure to put media.happypeter.org below auth-love, other wise www.happypeter,o
 
 #NOTE:
 
-python-pygments is not installed, your code block will be lost
+if python-pygments is not installed, your code block will be lost
+so a little annoying to have a python app in rails
 
 ## git-backed wiki
 
