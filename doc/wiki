@@ -45,13 +45,22 @@ A: I think when I check the Gemfile.lock,
 
 was in railscats one, now I see its becasue railscasts was depolied long time ago, so mysql2 was installed as the lower version, and then was locked, so "bundle install" just instlled the old one.
 
-ERROR: when rake db:createi
+ERROR: when rake db:create
 
     Can't connect to local MySQL server through socket '/tmp/mysql.sock 
 
 The fix:
 
    change ../config/database.yml and have the socket location in /etc/mysql/my.cnf
+### bundler
+
+`bundle install` will simple install whatever in Gemfile.lock, then I will still have `will_paginate.3.0.pre2` installed, but if I run `bundle update`, the lock file will be changed, and now `will_paginate.3.0.0` will be used, that cause this error:
+
+    undefined method `paginate' for #<Array:0x00000102688aa0>
+
+since my current will_paginate works, so I do not want to do a update.
+
+NOTE: need to restart apache to test things, when using "passenger + ENV= development".
 ### mysql commands
 
 Delete a row(s) from a table.
