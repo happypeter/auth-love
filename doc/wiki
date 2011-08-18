@@ -72,6 +72,10 @@ clear user's password_hash
    mysql> use authlove_development;
    mysql> update users set password_hash="" where id=1;
 
+how to dump a db:
+
+    mysqldump -uroot authlove_development>authlove_development.sql
+
 how to restore a db:
 
     mysql> create database authlove_development;
