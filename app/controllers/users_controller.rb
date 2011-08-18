@@ -31,13 +31,9 @@ class UsersController < ApplicationController
   end  
     
   def create  
- # this method is called when you click the "created user" button, then I see
- # in Firebug a "post users" request, so according to 
- # http://guides.rubyonrails.org/routing.html
- # the users#create will be called
     @user = User.new(params[:user])  
     if @user.save  
-      session[:user_id] = @user.id # the session here, has nothing to do with the controller name Sessions, I will test this by using another controller name tommorrow! 
+      session[:user_id] = @user.id 
       redirect_to user_path(@user), :notice => "signed up!"  
     else  
       render "new"  
