@@ -20,7 +20,7 @@ class SessionsController < ApplicationController
         else
           cookies[:auth_token] = user.auth_token
         end
-        redirect_to root_url, :notice => "Logged in with new auth_token!"
+        redirect_to root_url, :notice => "Logged in!"
       end
     else  
       flash.now.alert = "Invalid name or password"  
