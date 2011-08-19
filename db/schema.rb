@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20110625140041) do
+ActiveRecord::Schema.define(:version => 20110819022742) do
 
   create_table "comments", :force => true do |t|
     t.text     "body"
@@ -35,6 +35,7 @@ ActiveRecord::Schema.define(:version => 20110625140041) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "name"
+    t.string   "auth_token"
   end
 
 end

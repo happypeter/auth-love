@@ -4,11 +4,7 @@ class ApplicationController < ActionController::Base
     
   private  
   def current_user  
-    @current_user ||= User.find(session[:user_id]) if session[:user_id]  
-    # session[:user_id] will stay there even auth_love and its db is deleted
-    # session[:user_id] will still be valid, when auth_love is started again
-    # it can only be removed by close the firefox tab and then restart
-    # firefox. so that is what they called cookie, I think.
+    @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   end  
 end  
 #http://stackoverflow.com/questions/3549713/controller-helper-method

@@ -33,7 +33,7 @@ class UsersController < ApplicationController
   def create  
     @user = User.new(params[:user])  
     if @user.save  
-      session[:user_id] = @user.id 
+      cookies[:auth_token] = @user.auth_token ## login automatially after singup
       redirect_to user_path(@user), :notice => "signed up!"  
     else  
       render "new"  

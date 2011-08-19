@@ -10,7 +10,7 @@ class User < ActiveRecord::Base
   # changed
   validates_presence_of :name  
   validates_uniqueness_of :name  
-
+  before_create { generate_token(:auth_token) }
   def self.authenticate(name, password)  
     user = find_by_name(name)  
     if user && user.password_hash == BCrypt::Engine.hash_secret(password, user.password_salt)  
@@ -24,7 +24,11 @@ class User < ActiveRecord::Base
       nil  
     end  
   end  
-    
+  def generate_token(column)
+    begin
+      self[column] = SecureRandom.urlsafe_base64
+    end while User.exists?(column => self[column])
+  end  
   def encrypt_password  
     if password.present?  
       self.password_salt = BCrypt::Engine.generate_salt  
