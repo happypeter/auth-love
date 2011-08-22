@@ -74,6 +74,17 @@ clear user's password_hash
 
    mysql> use authlove_development;
    mysql> update users set password_hash="" where id=1;
+   # "" is NOT NULL, this is obvious when you check this with phpmyadmin
+   # and thus the code 
+   #
+   #    user.password_hash.empty?
+   #
+   # is usable when set password_hash to ""
+   #
+   # but when I change password_hash to NULL with phpmyadmin, I have to change
+   # the code into
+   #
+   #    user.password_hash == nil
 
 how to dump a db:
 
