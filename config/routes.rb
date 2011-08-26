@@ -1,5 +1,4 @@
 AuthLove::Application.routes.draw do  
-  get "password_resets/new"
 
   get "log_in" => "sessions#new", :as => "log_in"  # if you use "peters/new" rather than "peters#new", error: peters uninitilized
   # post "log_in" => "peter#new", :as => "log_in"  
@@ -18,6 +17,7 @@ AuthLove::Application.routes.draw do
   end
   resources :sessions
   resources :nav
+  resources :password_resets
   resources :posts do
     resources :comments
   end
