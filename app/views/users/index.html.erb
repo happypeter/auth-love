@@ -1,7 +1,17 @@
+<table>
+  <tr>	
+	 <td>NO.</td>
+     <td>name</td> 
+     <td>posts</td>
+  </tr>
 <% if @users != nil %>
   <% @users.each do |user| %>
   <p>
-   <%= link_to user.name, user %>
+    <tr>
+       <td><%= user.id%></td>	
+       <td><%= link_to user.name, user %></td> 
+       <td><%= user.posts.count%></td>
+     </tr>
   </p>
   <% end %>
 <% else %>
