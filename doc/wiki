@@ -29,6 +29,25 @@ BE sure to put media.happypeter.org below auth-love, other wise www.happypeter,o
 if python-pygments is not installed, your code block will be lost
 so a little annoying to have a python app in rails
 
+BUG mac pygment:
+
+Now on mac, I 
+
+    sudo easy_install pygment
+
+and then
+
+    cd auth-love
+    r s
+
+now if I view the site at 127.0.0.1:3000, every thing works all right, but if I view it with Passenger
+the error when I try to use `markdown()`:
+
+    No such file or directory - posix_spawnp
+
+the same error shows up if I use `r s` to view the site, but `rm pygment`
+Why?
+
 ## git-backed wiki
 
 Gollum is a simple wiki system built on top of Git that powers GitHub Wikis.
