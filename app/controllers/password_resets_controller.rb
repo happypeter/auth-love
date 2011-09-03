@@ -7,7 +7,7 @@ class PasswordResetsController < ApplicationController
       user.send_password_reset 
       redirect_to root_url, :notice => "Email sent with password reset instructions."
     else
-      redirect_to root_url, :notice => "No such email address!"
+      flash[:notice] = "No such email address!"
     end
   end
 
