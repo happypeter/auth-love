@@ -8,7 +8,7 @@ class PasswordResetsController < ApplicationController
       redirect_to root_url, :notice => "Email sent with password reset instructions."
     else
       flash[:notice] = "No such email address!"
-      render :edit
+      render :new
     end
   end
 
