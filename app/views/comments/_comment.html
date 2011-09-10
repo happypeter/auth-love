@@ -1,4 +1,4 @@
-<div>
+	<div>
   <div id="comment_head">
      <span class="comhead">
        <% @user = User.find(comment.user_id )%>
@@ -12,7 +12,7 @@
                        :method => :delete %>
           <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
        <% end %>
-       <%= link_to 'reply', new_comment_path( :post_id => comment.post.id :parent_id => comment) %>
+       <%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %>
      </span>
      <br \>
    </div>
