@@ -8,6 +8,7 @@ gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
 gem 'passenger'
+gem 'ancestry'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'

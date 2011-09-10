@@ -220,3 +220,26 @@ good way to test
 ## rails.vim
 
 `gf` rocks
+
+## migration
+
+the rake db:migrate failed in the middle, because I have some syntax error in.
+
+fix all the error then:
+
+    rake db:migrate
+
+not working, since some column has already been added 
+
+
+try: 
+rake db:migrate:down VERSION=20110910074643 
+
+of no use, and It seems this only works on fully successful migration. 
+
+so delete mysql colum manually:
+
+    alter table comments drop ancestry 
+
+fix the issue.
+
