@@ -1,5 +1,6 @@
 <%= form_for @comment do |f| %>
   <%= f.hidden_field :parent_id %>
+  <%= f.hidden_field :post_id %>
   <p>
     <%= f.label :body, "New Message" %><br />
     <%= f.text_area :body, :rows => 8 %>
