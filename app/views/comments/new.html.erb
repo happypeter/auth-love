@@ -1,5 +1,6 @@
+<%= render @comment.parent if @comment.parent %>
 <%= form_for @comment do |f| %>
-  <%= f.hidden_field :parent_id %>
+  <%= f.hidden_field :parent_id %>  # you can use this in create action as params[:comment][:parant_id], NOT params[:parant_id]
   <%= f.hidden_field :post_id %>
   <p>
     <%= f.label :body, "New Message" %><br />
