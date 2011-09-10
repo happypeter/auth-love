@@ -1,4 +1,5 @@
 <% if current_user %>  
+    # this no longer works
     <%= form_for([@post, @post.comments.build]) do |f| %>
       <div class="field">
         <%= f.text_area :body, :size => "70x8" %>
