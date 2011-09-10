@@ -18,7 +18,7 @@ class CommentsController < ApplicationController
     end
   end
   def new
-      @comment = Comment.new(:post_id => params[post_id], :parent_id => params[:parent_id])
+      @comment = Comment.new(:post_id => params[:post_id], :parent_id => params[:parent_id])
   end
   def index
     if params[:search]
