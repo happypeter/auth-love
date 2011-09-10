@@ -1,6 +1,7 @@
 class CommentsController < ApplicationController
   before_filter :check_perm, :only => [ :edit, :update, :destroy ]
 
+
   def check_perm
     # the check_perm here is not really very necessary, since if the reader is
     # not allowed to edit or delelte the comment, he won't even see the
@@ -15,6 +16,9 @@ class CommentsController < ApplicationController
       flash[:notice] = "Sorry, you are not allowed to edit or destory this post"
       redirect_to posts_path
     end
+  end
+  def new
+      @comment = Comment.new
   end
   def index
     if params[:search]

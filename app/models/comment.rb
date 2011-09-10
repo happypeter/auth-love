@@ -3,4 +3,6 @@ class Comment < ActiveRecord::Base
   belongs_to :post
   ## for will_paginate
   cattr_reader :per_page
+  has_ancestry
+
 end

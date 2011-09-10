@@ -1,0 +1,8 @@
+<%= form_for @comment do |f| %>
+  <%= f.hidden_field :parent_id %>
+  <p>
+    <%= f.label :body, "New Message" %><br />
+    <%= f.text_area :body, :rows => 8 %>
+  </p>
+  <p><%= f.submit "Post Message" %></p>
+<% end %>
