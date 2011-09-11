@@ -24,8 +24,9 @@
 <% if @post.comments.any? %>  
 
   <h2>Comments</h2>
-  <%= render :partial => "comments/comment",
-             :collection => @post.comments %>
+  <%= nested_comments @post.comments.arrange(:order => :created_at) %>
+
+
    
 
 <% end %>
