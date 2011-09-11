@@ -205,3 +205,13 @@ blockquote {
   color: #777;
 }
 
+/* comments */
+
+.nested_comments {
+  margin-left: 83px;
+}
+
+.nested_comments .nested_comments .nested_comments .nested_comments {
+  margin-left: 0;
+}
+
