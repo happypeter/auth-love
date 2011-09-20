@@ -118,6 +118,12 @@ how to restore a db:
 
 that's all
 
+for better git history, I think I need something like 
+
+    mysqldump --xml
+
+or something to separete different records in to different lines.
+
 ## don't use phpmyadmin to delete posts entry
 
 because the comments belong to it won't be deleted, and thus a error when you try to list
