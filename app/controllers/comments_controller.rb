@@ -25,7 +25,7 @@ class CommentsController < ApplicationController
       @comments = Comment.search(params[:search], params[:page])
     else
       @comments = Comment.all.reverse
-      @comments = @comments.paginate :per_page => 5, :page => params[:page]
+      @comments = @comments.paginate :per_page => 30, :page => params[:page]
     end
 
 

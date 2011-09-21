@@ -5,7 +5,7 @@ class Post < ActiveRecord::Base
 
   ## for will_paginate
   cattr_reader :per_page
-  @@per_page = 10
+  @@per_page = 30
 
   ## I don't really want posters to delete other people's comments
   # that's not fair, but if the post is deleted the comments can still
@@ -14,7 +14,7 @@ class Post < ActiveRecord::Base
   has_many :comments, :dependent => :destroy
   belongs_to :user
   def self.search(search, page)
-    paginate :per_page => 5, :page => page,
+    paginate :per_page => 30, :page => page,
              :conditions => ['title like ?', "%#{search}%"], 
              :order => 'id DESC' #DESC: list in reverse order
   end

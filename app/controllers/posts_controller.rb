@@ -18,7 +18,7 @@ class PostsController < ApplicationController
       @posts = Post.search(params[:search], params[:page])
     else
       @posts = Post.all.reverse
-      @posts = @posts.paginate :per_page => 5, :page => params[:page]
+      @posts = @posts.paginate :per_page =>30, :page => params[:page]
     end
 
 
