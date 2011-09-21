@@ -66,12 +66,16 @@
     <table width="100%" cellspacing=0 cellpadding=1><tr><td bgcolor=#ff6600></td></tr></table><br>
     <table  width="100%">
     <tr>
-    <a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %> | <%= link_to "users", users_path %>
+        <center>
+            <a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %> | <%= link_to "users", users_path %>
+        </center>
     </tr>
     </table>
 </td></tr>
 
+
 <tr><td>
+<br />
  <center>
  <%= form_tag posts_path, :method => "get" do %>
         <%= text_field_tag :search, params[:search], :size => 25 %>
