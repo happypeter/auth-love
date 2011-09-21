@@ -18,24 +18,16 @@ pre { margin-left: 3% }
 
 #comment_head
 {
-border-left: 9px;
-padding:1px 1px 1px 1px;
 }
 #comment_body
 {
-border-left: 9px;
-padding:8px 5px 8px 15px;
 }
 
 #post_head
 {
-border-left: 9px;
-padding:8px 5px 8px 15px;
 }
 #post_body
 {
-border-left: 9px;
-padding:8px 5px 8px 15px;
 }
 
 /* <span class="comhead"> (mozilla.com) </span> */
