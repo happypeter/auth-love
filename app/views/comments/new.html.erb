@@ -1,4 +1,26 @@
-<%= render @comment.parent if @comment.parent %>
+<% if @comment.parent %>
+    <div>
+      <div id="comment_head">
+         <span class="comhead">
+           <% @user = User.find(@comment.parent.user_id )%>
+           by <%= link_to @user.name, user_path(@user) %> 
+           (
+           <%= @comment.parent.created_at %>
+           )
+         </span>
+         <br \>
+       </div>
+      <div id="comment_body">
+        <%= markdown(@comment.parent.body) %>
+      </div>
+      <br \>
+    </div>
+<% end %>
+
+<%# the above code sucks, need to merge into comment partial %>
+ 
+
+
 <%= form_for @comment do |f| %>
   <%= f.hidden_field :parent_id %>  <%# you can use this in create action as params[:comment][:parant_id], NOT params[:parant_id]%>
   <%= f.hidden_field :post_id %>
