@@ -3,6 +3,7 @@
 	 <td>NO.</td>
      <td>name</td> 
      <td>posts</td>
+     <td>comments</td>
   </tr>
 <% if @users != nil %>
   <% @users.each do |user| %>
@@ -11,6 +12,7 @@
        <td><%= user.id%></td>	
        <td><%= link_to user.name, user %></td> 
        <td><%= user.posts.count%></td>
+       <td><%= user.comments.count%></td>
      </tr>
   </p>
   <% end %>
