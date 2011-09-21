@@ -19,21 +19,11 @@
     <%= markdown(@post.content) %>
   </div>
 </div>
- 
-<% if @post.comments.any? %>  
-
-  <h2>Comments</h2>
-  <%= nested_comments @post.comments.arrange(:order => :created_at) %>
-
-
-   
-
-<% end %>
-
-<h2>Add a comment:</h2>
-<p>
-Use Markdown for formatting. See <%= link_to "examples", markdown_path %>.
-</p>
 
 <%= render "comments/form" %>
- 
+Use Markdown for formatting. See <%= link_to "examples", markdown_path %>.
+<br> 
+<br> 
+<% if @post.comments.any? %>  
+    <%= nested_comments @post.comments.arrange(:order => :created_at) %>
+<% end %>
