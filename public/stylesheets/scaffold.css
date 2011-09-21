@@ -6,8 +6,6 @@
 */
 body
 {
-margin-left: 100px;
-margin-right: 100px;
 font-family: Verdana, Helvetica, Arial;
 
 }
@@ -20,26 +18,22 @@ pre { margin-left: 3% }
 
 #comment_head
 {
-background: #dbdbdb no-repeat;
 border-left: 9px;
 padding:1px 1px 1px 1px;
 }
 #comment_body
 {
-background: #f3f3f3 no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
 }
 
 #post_head
 {
-background: #dbdbdb no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
 }
 #post_body
 {
-background: #f3f3f3 no-repeat;
 border-left: 9px;
 padding:8px 5px 8px 15px;
 }

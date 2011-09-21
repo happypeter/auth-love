@@ -13,7 +13,6 @@
           <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
        <% end %>
      </span>
-     <br \>
    </div>
   <div id="comment_body">
     <%= markdown(comment.body) %>
@@ -23,6 +22,5 @@
     <u><%= link_to "reply", log_in_path %></u>
     <% end %>
   </div>
-  <br \>
 </div>
  

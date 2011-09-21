@@ -5,7 +5,6 @@
     <%= @post.id %>. <%= link_to @post.title, @post%>
     <% @user = User.find(@post.user_id )%>
     <span class="comhead">
-    <br \>
     (
     by <%= link_to  @user.name, user_path(@user) %> <%= @post.created_at %>
     <% if current_user && current_user.id == @post.user.id  %>
