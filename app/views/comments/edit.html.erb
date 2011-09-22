@@ -9,6 +9,6 @@
       </div>
     <% end %>
 <% else %>  
-   <%= link_to "Log in", log_in_path %> to comment
+   <%= link_to "Log in", log_in_path(:return_to => request.url) %> to comment!!!
 <% end %>  
 

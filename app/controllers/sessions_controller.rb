@@ -1,5 +1,7 @@
 class SessionsController < ApplicationController  
   def new  
+    session[:return_to] = nil
+    session[:return_to] = params[:return_to] if params[:return_to]
   end  
     
   def create  
@@ -11,7 +13,7 @@ class SessionsController < ApplicationController
         else
           cookies[:auth_token] = user.auth_token
         end
-        redirect_to root_url, :notice => "Logged in!"
+        redirect_to_target_or_default root_url, :notice => "Signed in successfully"
       else # for old users who have no auth_token
         user.generate_token(:auth_token)
         user.save
@@ -20,7 +22,7 @@ class SessionsController < ApplicationController
         else
           cookies[:auth_token] = user.auth_token
         end
-        redirect_to root_url, :notice => "Logged in!"
+        redirect_to_target_or_default root_url, :notice => "Signed in successfully"
       end
     else  
       flash.now.alert = "Invalid name or password"  

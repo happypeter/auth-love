@@ -25,7 +25,7 @@
     </div>
   <% else %>  
      <p>
-       <%= link_to "Log in", log_in_path %> to submit
+       <%= link_to "Log in", log_in_path(:return_to => request.url) %> to submit
      </p>
   <% end %>  
 <% end %>

@@ -6,6 +6,10 @@ class ApplicationController < ActionController::Base
   def current_user  
     @current_user ||= User.find_by_auth_token!(cookies[:auth_token]) if cookies[:auth_token]
   end  
+  def redirect_to_target_or_default(default, *options)
+    redirect_to(session[:return_to] || default, *options)
+    session[:return_to] = nil
+  end
 end  
 #http://stackoverflow.com/questions/3549713/controller-helper-method
 #helper_method is useful when the functionality is something that's used between both the controller and the view. A good example is something like current_user.

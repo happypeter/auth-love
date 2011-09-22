@@ -19,7 +19,7 @@
     <% if current_user  %>
     <div style="margin-top:-10pt; font-size:10pt"><u><%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %></u></div>
     <% else %>
-    <div style="margin-top:-10pt; font-size:10pt"><u><%= link_to "reply", log_in_path %></u><div>
+    <div style="margin-top:-10pt; font-size:10pt"><u><%= link_to "reply", log_in_path(:return_to => request.url) %></u><div>
     <% end %>
   </div>
 </div>
