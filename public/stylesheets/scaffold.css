@@ -18,6 +18,7 @@ pre { margin-left: 3% }
 
 #comment_head
 {
+margin-bottom:-10px;
 }
 #comment_body
 {
@@ -194,7 +195,7 @@ blockquote {
 /* comments */
 
 .nested_comments {
-  margin-left: 83px;
+  margin-left: 43px;
 }
 
 .nested_comments .nested_comments .nested_comments .nested_comments {
