@@ -43,7 +43,8 @@ class CommentsController < ApplicationController
       if @comment.save
         format.html { redirect_to(post_path(@comment.post), :notice => 'Comment was successfully created.') }
       else
-        format.html { redirect_to(@post, :notice => @comment.errors) }
+        #FIXME: this is still not really User-friendly
+        format.html { redirect_to(@comment.post,  :notice => @comment.errors) }
       end
     end
   end
