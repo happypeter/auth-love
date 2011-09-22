@@ -17,9 +17,9 @@
   <div id="comment_body">
     <%= markdown(comment.body) %>
     <% if current_user  %>
-    <span class="comhead"><u><%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %></u></span>
+    <div style="margin-top:-15px; font-size:10pt"><u><%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %></u></div>
     <% else %>
-    <span class="comhead"><u><%= link_to "reply", log_in_path %></u><span>
+    <div style="margin-top:-15px; font-size:10pt"><u><%= link_to "reply", log_in_path %></u><div>
     <% end %>
   </div>
 </div>
