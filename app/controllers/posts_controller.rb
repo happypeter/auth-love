@@ -5,9 +5,9 @@ class PostsController < ApplicationController
 
   def vote
     @post = Post.find(params[:id])
-    if params[:item]
-      flash[:notice] = "params[:item]=" + params[:item] + "params[:id]=" + params[:id]
-      if @post.points.nil?
+    if params[:id]
+      flash[:notice] = "params[:id]=" + params[:id]
+      if @post.points.nil? # the initial value of points is NULL not 0, bad bad!!
         @post.points = 1
       else
         @post.points += 1

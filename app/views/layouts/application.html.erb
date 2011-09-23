@@ -11,9 +11,26 @@
   <%= csrf_meta_tag %>
 </head>
 <body>
+	
+	<script>
+	function byId(id) {
+	  return document.getElementById(id);
+	}
+
+	function vote(node) {
+
+	  // hide arrows
+	  byId(node.id).style.visibility = 'hidden';
+
+	  // ping server
+	  var ping = new Image();
+	  ping.src = node.href;
+
+	  return false; // cancel browser nav
+	} </script>
 
 
-<a href="/vote?item=post&id=80">vote</a>
+
 
 <center>
 

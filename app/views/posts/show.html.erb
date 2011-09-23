@@ -2,7 +2,7 @@
 <!-- since _posthead reads from @posts -->
 <div>
   <div id="post_head">
-    <%= @post.id %>. <%= link_to @post.title, @post%>
+    <%= @post.id %>. <a href=<%="/post_vote?id="+@post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a><%= link_to @post.title, @post%>
     <% @user = User.find(@post.user_id )%>
     <span class="comhead">
     (
