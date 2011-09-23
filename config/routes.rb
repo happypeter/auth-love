@@ -7,6 +7,7 @@ AuthLove::Application.routes.draw do
   get "log_out" => "sessions#destroy", :as => "log_out"  
   match "about" => "nav#about", :as => "about"
   match "markdown" => "nav#markdown", :as => "markdown"
+  match "vote" =>"posts#vote"
 
   get "sign_up" => "users#new", :as => "sign_up"  
 

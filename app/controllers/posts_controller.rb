@@ -3,6 +3,13 @@ class PostsController < ApplicationController
   # GET /posts.xml
   before_filter :check_perm, :only => [ :edit, :update, :destroy ]
 
+  def vote
+    @post = Post.find(params[:id])
+    if params[:item]
+      flash[:notice] = "post voted!" + params[:item]
+      redirect_to post_path(@post)
+    end
+  end
   def check_perm
     @post = Post.find(params[:id])
     if current_user == nil
