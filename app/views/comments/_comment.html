@@ -12,9 +12,6 @@
        <%= comment.created_at %>
        )
        <% if current_user && current_user.id == comment.user_id %>
-          <%= link_to 'Delete', [comment.post, comment],
-                       :confirm => 'are you sure?',
-                       :method => :delete %>
           <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
        <% end %>
      </span>
