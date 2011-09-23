@@ -6,7 +6,7 @@ class PostsController < ApplicationController
   def vote
     @post = Post.find(params[:id])
     if params[:item]
-      flash[:notice] = "post voted!" + params[:item]
+      flash[:notice] = "post" + params[:item]
       redirect_to post_path(@post)
     end
   end
