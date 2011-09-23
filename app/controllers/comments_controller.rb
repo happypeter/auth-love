@@ -2,17 +2,19 @@ class CommentsController < ApplicationController
   before_filter :check_perm, :only => [ :edit, :update, :destroy ]
 
   def vote
-    @comment = Comment.find(params[:id])
-    if params[:id]
-      flash[:notice] = "params[:id]=" + params[:id]
+      @comment = Comment.find(params[:id])
+      if session[:comments_voted] == nil
+        session[:comments_voted] = []
+      end
+      session[:comments_voted].push(params[:id])
+      
       if @comment.points.nil? # the initial value of points is NULL not 0, bad bad!!
         @comment.points = 1
       else
         @comment.points += 1
       end
       @comment.save
-      redirect_to post_path(@comment.post)
-    end
+      redirect_to root_url
   end
   def check_perm
     # the check_perm here is not really very necessary, since if the reader is

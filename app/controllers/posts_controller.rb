@@ -4,8 +4,7 @@ class PostsController < ApplicationController
   before_filter :check_perm, :only => [ :edit, :update, :destroy ]
 
   def vote
-    @post = Post.find(params[:id])
-    if params[:id]
+      @post = Post.find(params[:id])
       if session[:posts_voted] == nil
         session[:posts_voted] = []
       end
@@ -18,8 +17,7 @@ class PostsController < ApplicationController
         @post.points += 1
       end
       @post.save
-      redirect_to post_path(@post)
-    end
+      redirect_to root_url # I have to keep this line otherwise the this params[:id] can not be push into session, why??
   end
   def check_perm
     @post = Post.find(params[:id])

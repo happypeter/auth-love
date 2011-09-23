@@ -5,9 +5,8 @@
       <%= post.id %>. 
 <% if session[:posts_voted]&&session[:posts_voted].include?(post.id.to_s)%>
     <img src="http://ycombinator.com/images/s.gif" height=1 width=14>
-<% else %>
-    
-    <a href=<%="/post_vote?id="+post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a>
+<% else %>    
+    <a id=<%=post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a>
 <%end%>
 
 
