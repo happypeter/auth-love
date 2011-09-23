@@ -198,7 +198,7 @@ blockquote {
   margin-left: 43px;
 }
 
-.nested_comments .nested_comments .nested_comments .nested_comments {
+.nested_comments .nested_comments .nested_comments .nested_comments .nested_comments {
   margin-left: 0;
 }
 
