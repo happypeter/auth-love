@@ -9,7 +9,10 @@
 	    <a id=<%=@post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+@post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a>
 	<%end%>
     <% @user = User.find(@post.user_id )%>
+	<%=@post.title%> 
+	<br />
     <span class="comhead">
+
     (
     by <%= link_to  @user.name, user_path(@user) %> <%= @post.created_at %>
     <% if current_user && current_user.id == @post.user.id  %>

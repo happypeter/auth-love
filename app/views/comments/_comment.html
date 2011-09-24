@@ -7,7 +7,14 @@
 	<% else %>    
         <a id=<%=comment.id.to_s %> onclick="return vote(this)" href=<%="/comment_vote?id="+comment.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a> 
 	<%end%>
-       by <%= link_to @user.name, user_path(@user) %> 
+	   <% if comment.points.nil? %>
+			0 point
+		<%elsif comment.points == 1%>
+		    1 point
+		<%else%>
+	   		<%=comment.points%> points 
+        <%end%>
+		by <%= link_to @user.name, user_path(@user) %> 
        (
        <%= comment.created_at %>
        )
