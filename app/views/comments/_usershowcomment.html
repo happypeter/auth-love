@@ -3,6 +3,13 @@
   <div>
     <div id="comment_head">
       <span class="comhead">
+			<% if comment.points.nil? %>
+				0 point
+			<%elsif comment.points == 1%>
+	    	    1 point
+			<%else%>
+ 			    <%=comment.points%> points 
+  	    <%end%>
        <% @user = User.find(comment.user_id )%>
        by <%= link_to @user.name, user_path(@user) %> 
 		<%= time_ago_in_words comment.created_at %> ago
