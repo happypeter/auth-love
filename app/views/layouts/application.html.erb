@@ -29,79 +29,81 @@
 	  return false; // cancel browser nav
 	} </script>
 
-
-
-
 <center>
+<table border=0 cellpadding=0 cellspacing=0 width="85%" bgcolor=#f6f6ef>
 
-    <table border=0 cellpadding=0 cellspacing=0 width="85%" bgcolor=#f6f6ef>
-
-
-
-<tr><td>
-
-
-    <table  width="100%" bgcolor=#ff6600>
     <tr>
-      <td style="width:18px;padding-right:4px">
-      <a href="http://happypeter.org">
-      <img src="/images/favicon.ico" width=18 height=18 style="border:1px #ffffff solid;"></img>
-      </a>
-      </td>
-      <td>
-      <b><%= link_to 'Happy News', posts_path %> </b> 
-        <%= link_to 'new', posts_path %>  
-      | <%= link_to 'comments', comments_path %>  
-      | <%= link_to 'submit', new_post_path %>
-      </td>
-      <td style="text-align:center;color:#fff00f">
-        <% flash.each do |name, msg| %>  
-           <%= content_tag :div, msg, :id => "flash#{name}" %>  
-        <% end %>  
-      </td>
-      <td style="text-align:right;">
-        <% if current_user %>  
-          <% @user= User.find(current_user.id) %>
-          <%= link_to current_user.name, user_path(@user) %> |
-          <%= link_to "Log out", log_out_path %>  
-        <% else %>  
-          <%= link_to "Sign up", sign_up_path %> |   
-          <%= link_to "Log in", log_in_path %>  
-        <% end %>  
-      </td>
-    </tr>
-    </table>
+		<td>
+    		<table  width="100%" bgcolor=#ff6600>
+    			<tr>
+      				<td style="width:18px;padding-right:4px">
+      					<a href="http://happypeter.org">
+      						<img src="/images/favicon.ico" width=18 height=18 style="border:1px #ffffff solid;"></img>
+      					</a>
+      				</td>
+      				<td>
+      					<b><%= link_to 'Happy News', posts_path %> </b> 
+        				<%= link_to 'new', posts_path %>  
+      					| <%= link_to 'comments', comments_path %>  
+      					| <%= link_to 'submit', new_post_path %>
+      				</td>
+      				<td style="text-align:center;color:#fff00f">
+        				<% flash.each do |name, msg| %>  
+           				<%= content_tag :div, msg, :id => "flash#{name}" %>  
+        				<% end %>  
+      				</td>
+      				<td style="text-align:right;">
+        				<% if current_user %>  
+          				<% @user= User.find(current_user.id) %>
+          				<%= link_to current_user.name, user_path(@user) %> |
+          				<%= link_to "Log out", log_out_path %>  
+        				<% else %>  
+          				<%= link_to "Sign up", sign_up_path %> |   
+          				<%= link_to "Log in", log_in_path %>  
+        				<% end %>  
+      				</td>
+    			</tr>
+    		</table>
 
-</td></tr>
+		</td>
+	</tr>
 
-<tr><td style="padding:12px">
-    <%= yield %>
-</td></tr>
-
-
-<tr><td>
-    <table width="100%" cellspacing=0 cellpadding=1><tr><td bgcolor=#ff6600></td></tr></table><br>
-    <table  width="100%">
-    <tr>
-        <center>
-            <a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %> | <%= link_to "users", users_path %>
-        </center>
-    </tr>
-    </table>
-</td></tr>
+	<tr>
+		<td style="padding:12px">
+    		<%= yield %>
+		</td>
+	</tr>
 
 
-<tr><td>
-<br />
- <center>
- <%= form_tag posts_path, :method => "get" do %>
-        <%= text_field_tag :search, params[:search], :size => 25 %>
-        <%= submit_tag "Search by title", :name => nil %>
- <% end %>
- </center>
-</td></tr>
+	<tr>
+		<td>
+    		<table width="100%" cellspacing=0 cellpadding=1><tr><td bgcolor=#ff6600></td></tr></table>
+			<br />
+    		<table  width="100%">
+    			<tr>
+        			<center>
+            			<a href="http://happypeter.github.com">Blog</a> | <%= link_to "about", about_path %> | <%= link_to "users", users_path %>
+        			</center>
+    			</tr>
+    		</table>
+		</td>
+	</tr>
 
 
+	<tr>
+		<td>
+			<br />
+ 			<center>
+ 				<%= form_tag posts_path, :method => "get" do %>
+        			<%= text_field_tag :search, params[:search], :size => 25 %>
+        			<%= submit_tag "Search by title", :name => nil %>
+ 				<% end %>
+ 			</center>	
+			<br />
+		</td>
+	</tr>
+
+</table>
 </center>
 </body>
 </html>
