@@ -1,14 +1,18 @@
-<% if current_user %>  
+
     <%= form_for(Comment.new(:post_id => @post.id)) do |f| %>
         <%= f.hidden_field :post_id %>
       <div class="field">
         <%= f.text_area :body, :size => "70x8" %>
       </div>
+
+<% if current_user %> 
       <div class="actions">
         <%= f.submit %>
       </div>
-    <% end %>
-<% else %>  
-   <%= link_to "Log in", log_in_path(:return_to => request.url) %> to comment!!!!
+    <% end %> 
+<% end %>
+<% if not current_user %>  
+   <u><%= link_to "Log in", log_in_path(:return_to => request.url) %> </u> to Comment. 
+	<br \>
 <% end %>  
 
