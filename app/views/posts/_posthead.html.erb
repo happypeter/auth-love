@@ -8,6 +8,13 @@
       <span class="comhead">
       <br \>
       (
+		<% if post.points.nil? %>
+			0 point
+		<%elsif post.points == 1%>
+  	    1 point
+		<%else%>
+		    <%=post.points%> points 
+	    <%end%>
       by <%= link_to  @user.name, user_path(@user) %> 
       | <%= post.comments.count %> comments,  
 		<%= time_ago_in_words post.created_at %> ago
