@@ -10,7 +10,7 @@
       (
       by <%= link_to  @user.name, user_path(@user) %> 
       | <%= post.comments.count %> comments,  
-      <%= post.created_at %>
+		<%= time_ago_in_words post.created_at %> ago
       <% if current_user && current_user.id == post.user.id  %>
         <%= link_to 'Edit', edit_post_path(post) %>
       <% end %>

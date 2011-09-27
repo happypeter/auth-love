@@ -21,7 +21,7 @@
     			<span class="comhead">
 
     				(
-    				by <%= link_to  @user.name, user_path(@user) %> <%= @post.created_at %>
+    				by <%= link_to  @user.name, user_path(@user) %> <%= time_ago_in_words @post.created_at %> ago
     				<% if current_user && current_user.id == @post.user.id  %>
       					<%= link_to 'Edit', edit_post_path(@post) %>
     				<% end %>

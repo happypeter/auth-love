@@ -5,7 +5,7 @@
       <span class="comhead">
        <% @user = User.find(comment.user_id )%>
        by <%= link_to @user.name, user_path(@user) %> 
-        <%= comment.created_at %>
+		<%= time_ago_in_words comment.created_at %> ago
         <% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
       </span>

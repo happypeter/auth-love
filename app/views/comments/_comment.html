@@ -24,7 +24,7 @@
         	    <%end%>
 			    by <%= link_to @user.name, user_path(@user) %> 
        		    (
-       		    <%= comment.created_at %>
+				<%= time_ago_in_words comment.created_at %> ago
        			)
        			<% if current_user && current_user.id == comment.user_id %>
           		<%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>

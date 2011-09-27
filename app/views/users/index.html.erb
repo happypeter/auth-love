@@ -1,18 +1,20 @@
 <table>
   <tr>	
-	 <td>NO.</td>
-     <td>name</td> 
-     <td>posts</td>
-     <td>comments</td>
+	 <th></th>
+     <th></th> 
+     <th>posts</th>
+     <th>comments</th>
+ 	 <th>points</th>
   </tr>
 <% if @users != nil %>
   <% @users.each do |user| %>
   <p>
     <tr>
-       <td><%= user.id%></td>	
+       <td align="right"><%= user.id%></td>	
        <td><%= link_to user.name, user %></td> 
-       <td><%= user.posts.count%></td>
-       <td><%= user.comments.count%></td>
+       <td align="center"><%= user.posts.count%></td>
+       <td align="center"><%= user.comments.count%></td>
+		<td align="center">do not how to count yet</td>
      </tr>
   </p>
   <% end %>
