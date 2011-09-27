@@ -2,12 +2,18 @@
 <!-- since _posthead reads from @posts -->
 <div>
   <div id="post_head">
-    <%= @post.id %>. 
+	<table>
+	<tr>
+		<td valign="top">
+			<center>
 	<% if session[:posts_voted]&&session[:posts_voted].include?(@post.id.to_s)%>
 	    <img src="http://ycombinator.com/images/s.gif" height=1 width=14>
 	<% else %>    
 	    <a id=<%=@post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+@post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a>
 	<%end%>
+	</center>
+	</td>
+	<td>
     <% @user = User.find(@post.user_id )%>
 	<%=@post.title%> 
 	<br />
@@ -31,6 +37,9 @@
 Use Markdown for formatting. See <%= link_to "examples", markdown_path %>.
 <br> 
 <br> 
+</td>
+</tr>
+</table>
 <% if @post.comments.any? %>  
     <%= nested_comments @post.comments.arrange(:order => :created_at) %>
 <% end %>
