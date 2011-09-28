@@ -14,9 +14,12 @@ a:visited { color:#828282; text-decoration:none; }
 .pagetop { font-family:Verdana; font-size: 10pt; color:#000000; }
 .pagetop a:visited { color:#000000;}
 /*this is very important for me*/
-pre { margin-left: 3% }
-pre { overflow: auto; padding: 2px; max-width:600px; }
 
+pre { overflow: auto; padding: 2px; max-width:600px; }
+pre {
+  margin: 9px;
+  padding: 9px;
+}
 
 #comment_head
 {
@@ -109,10 +112,7 @@ div.field, div.actions {
   background-color: #232323;
   color: #E6E0DB;
 }
-pre {
-  margin: 9px;
-  padding: 9px;
-}
+
 
 .an { color:#E7BE69 }                      /* html attribute */
 .cm { color:#BC9358; font-style: italic; } /* comment */

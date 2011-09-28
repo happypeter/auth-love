@@ -1,5 +1,8 @@
 <% if @comments.any? %>  
   <% @comments.each do |comment| %>
+<table>
+<tr>
+<td>
   <div>
     <div id="comment_head">
       <span class="comhead">
@@ -12,8 +15,10 @@
   	    <%end%>
        <% @user = User.find(comment.user_id )%>
        by <%= link_to @user.name, user_path(@user) %> 
+		(
 		<%= time_ago_in_words comment.created_at %> ago
-        <% @post=Post.find(comment.post_id) %>
+        )
+		<% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
       </span>
       <br \>
@@ -21,9 +26,12 @@
     <div id="comment_body">
       <%= markdown(comment.body)%>
     </div>
-      <br \>
   </div>
+</td>
+</tr>
+</table>
   <% end %>
+
 <% else %>
   <p> no comment </p>
 <% end %>
