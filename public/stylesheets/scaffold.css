@@ -15,11 +15,8 @@ a:visited { color:#828282; text-decoration:none; }
 .pagetop a:visited { color:#000000;}
 /*this is very important for me*/
 
-pre { overflow: auto; padding: 2px; max-width:600px; }
-pre {
-  margin: 9px;
-  padding: 9px;
-}
+pre { overflow: auto; padding: 9px; max-width:600px; }
+
 
 #comment_head
 {
