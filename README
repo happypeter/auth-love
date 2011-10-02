@@ -1,7 +1,10 @@
 # DESIGN
 
- - a ticket system like http://news.ycombinator.com/
+ - a system like http://news.ycombinator.com/
  - authlove.com/yourname   shows all your own tickets and comments
+ 
+# Brain storm
+
  - inspired by railscasts:episodes#create, I want users and myself(mainly myself), to upload videos, audios, pics
 
     - railscasts have a note for each video, I can have this by having the ticket text(markdown-backed)
@@ -18,12 +21,6 @@
  - it is not twitter, it is not HN, and I will still keep my blog, the system will start simply as 
    a newer ticket sits on top of the rest older ones, then what's on the tickets? Anything, be it a 
    question from my students on vim or git, be it any other topic
-
-# Hacker News
- 
- - you click on a users name, and then you get all his posts
- - then we you click on his posts, you can also see who replied him
- - so on and so forth, you get whatever you need, really neat
 
 # RELEASE NOTES
 
