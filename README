@@ -27,6 +27,11 @@
 
 # RELEASE NOTES
 
+v0.8 release note:
+ - add reply to comments
+ - HN style
+ - action mailer now works
+
 v0.7 release note:
  - add checkbox "remember me"
  - new user login direct after signup
