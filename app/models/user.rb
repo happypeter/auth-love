@@ -42,4 +42,35 @@ class User < ActiveRecord::Base
       self.password_hash = BCrypt::Engine.hash_secret(password, password_salt)  
     end  
   end  
+  def get_points
+    @comments=Comment.where(:user_id => self.id)
+    @comment_points = 0
+    if @comments.any?   
+      @comments.each do |comment|
+        if comment.points.nil? 
+          @comment_points += 0
+        else 
+          @comment_points += 1
+        end
+      end
+    else
+      @comment_points = 0
+    end
+ 
+    @posts=Post.where(:user_id => self.id)
+    @post_points = 0
+    if @posts.any?   
+      @posts.each do |post|
+        if post.points.nil? 
+          @post_points += 0
+        else 
+          @post_points += 1
+        end
+      end
+    else
+      @post_points = 0
+    end
+    
+    @total = @comment_points  + @post_points
+  end
 end  

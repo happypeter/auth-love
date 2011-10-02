@@ -14,7 +14,7 @@
        <td><%= link_to user.name, user %></td> 
        <td align="center"><%= user.posts.count%></td>
        <td align="center"><%= user.comments.count%></td>
-		<td align="center">do not how to count yet</td>
+		<td align="center"><%= user.get_points%></td>
      </tr>
   </p>
   <% end %>
