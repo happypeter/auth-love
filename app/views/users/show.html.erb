@@ -42,8 +42,8 @@
 		<%else%>
 		    <%=comment.points%> points 
   	    <%end%>
-
-        by yourself, <%= time_ago_in_words comment.created_at %> ago,
+        ,
+        <%= time_ago_in_words comment.created_at %> ago,
         <% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
       </span>
