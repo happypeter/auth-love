@@ -8,13 +8,17 @@
 body  { font-family:Verdana; font-size:10pt;  }
 td    { font-family:Verdana; font-size:10pt;  }
 
-/*Remove the line under links*/
+/*links*/
 a:link    { color:#000000; text-decoration:none; }
 a:visited { color:#828282; text-decoration:none; }
 .pagetop { font-family:Verdana; font-size: 10pt; color:#000000; }
 .pagetop a:visited { color:#000000;}
-/*this is very important for me*/
+#post_body a:link, #post_body a:visited { text-decoration:underline;}
+#comment_body a:link, #comment_body a:visited { text-decoration:underline;}
+.comhead a:link { color:#828282; }
+.comhead a:hover { text-decoration:underline; }	
 
+/*pre*/
 pre { overflow: auto; padding: 9px; max-width:600px; }
 
 
