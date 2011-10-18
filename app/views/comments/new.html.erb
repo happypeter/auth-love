@@ -5,7 +5,7 @@
            <% @user = User.find(@comment.parent.user_id )%>
            by <%= link_to @user.name, user_path(@user) %> 
            (
-           <%= time_ago_in_words @comment.parent.created_at %>
+           <%= time_ago_in_words @comment.parent.created_at %> ago
            )
          </span>
          <br \>
