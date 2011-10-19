@@ -9,7 +9,7 @@
   <!-- the below line produces error, if above condition does not meet -->
   <% if @user.id == current_user.id %>
     <span class="comhead">
-      <%= link_to "Edit", edit_user_path(@user)%>
+      <%= link_to "edit", edit_user_path(@user)%>
     </span>
   <% end %>
 <% end %>
