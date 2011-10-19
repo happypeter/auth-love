@@ -9,7 +9,6 @@ class PostsController < ApplicationController
         session[:posts_voted] = []
       end
       session[:posts_voted].push(params[:id])
-      flash[:notice] = "params[:id]=" + params[:id] + " " + "session[:posts_voted]=" +session[:posts_voted].to_s
       
       if @post.points.nil? # the initial value of points is NULL not 0, bad bad!!
         @post.points = 1
