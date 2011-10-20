@@ -4,12 +4,22 @@
         <td align=right valign=top  class="title">
             <%= post.id %>.
         </td>
-        <td class="title">
+		<%# FIXME: this is different from the vote img in post#show: @post->post  vspace=3 is now 0, everything is messy%>
+		<td valign="top">
+				<% if session[:posts_voted]&&session[:posts_voted].include?(post.id.to_s)%>
+		    	<img src="http://ycombinator.com/images/s.gif" height=1 width=14>
+				<% else %>    
+		    	<a id=<%=post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=0 hspace=2></a>
+		<%# if vspace=3, the characters will move, after voting and refresh %>
+				<%end%>
+		</td>
+        <td valign="top" class="title">
             <%= link_to post.title, post%>
         </td>
     </tr>
     <tr>
         <td></td>
+		<td></td>
         <td class="subtext">
         <% @user = User.find(post.user_id )%>
         <span class="comhead">
