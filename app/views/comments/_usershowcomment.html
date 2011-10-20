@@ -1,7 +1,18 @@
 <% if @comments.any? %>  
   <% @comments.each do |comment| %>
-<table>
+<table cellpadding=0 cellspacing=0>
 <tr>
+	<td valign="top">
+		<center>
+       		<% @user = User.find(comment.user_id )%>
+			<% if session[:comments_voted]&&session[:comments_voted].include?(comment.id.to_s)%>
+	    		<img src="http://ycombinator.com/images/s.gif" height=1 width=14>
+			<% else %>    
+        		<a id=<%=comment.id.to_s %> onclick="return vote(this)" href=<%="/comment_vote?id="+comment.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a> 
+			<%end%>
+		</center>
+	</td>
+
 <td>
   <div>
     <div id="comment_head">

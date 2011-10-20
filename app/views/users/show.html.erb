@@ -36,13 +36,12 @@
       <span class="comhead">
 
 		<% if comment.points.nil? %>
-			0 point
+			0 point,
 		<%elsif comment.points == 1%>
-	   	    1 point
+	   	    1 point,
 		<%else%>
-		    <%=comment.points%> points 
+		    <%=comment.points%> points, 
   	    <%end%>
-        ,
         <%= time_ago_in_words comment.created_at %> ago,
         <% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
