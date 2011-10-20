@@ -1,28 +1,48 @@
+<% @posts.each do |post| %>
+<table cellpadding=0 cellspacing=0>
+    <tr>
+        <td align=right valign=top  class="title">
+            <%= post.id %>.
+        </td>
+        <td class="title">
+            <%= link_to post.title, post%>
+        </td>
+    </tr>
+    <tr>
+        <td></td>
+        <td class="subtext">
+        <% @user = User.find(post.user_id )%>
+        <span class="comhead">
+            <% if post.points.nil? %>
+                0 point
+            <%elsif post.points == 1%>
+                1 point
+            <%else%>
+                <%=post.points%> points
+            <%end%>
+            by <%= link_to  @user.name, user_path(@user) %>
+                 <%= time_ago_in_words post.created_at %> ago
+          |
 
-  <% @posts.each do |post| %>
-    <div id="post_head">
-      <%= post.id %>. <%= link_to post.title, post%>
+            <% if post.comments.count == 0 %>
+                0 comment
+            <%elsif post.comments.count == 1%>
+                1 comment
+            <%else%>
+               <%= post.comments.count %> comments
+            <%end%>
 
-      <% @user = User.find(post.user_id )%>
-      <span class="comhead">
-      <br \>
-      (
-		<% if post.points.nil? %>
-			0 point
-		<%elsif post.points == 1%>
-  	    1 point
-		<%else%>
-		    <%=post.points%> points 
-	    <%end%>
-      by <%= link_to  @user.name, user_path(@user) %> 
-      | <%= post.comments.count %> comments,  
-		<%= time_ago_in_words post.created_at %> ago
-      <% if current_user && current_user.id == post.user.id  %>
-      | <%= link_to 'edit', edit_post_path(post) %>
-      <% end %>
-      )
+
+           <% if current_user && current_user.id == post.user.id  %>
+          | <%= link_to 'edit', edit_post_path(post) %>
+          <% end %>
+
       </span>
-    </div>
-  <% end %>
+        </td>
+    </tr>
+    <tr style="height:5px"></tr>
+</table>
+<% end %>
+
 
 
