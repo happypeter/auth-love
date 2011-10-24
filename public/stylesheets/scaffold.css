@@ -135,12 +135,18 @@ div.field, div.actions {
 .kt { color:#CB7832 }                      /* keyword */
 .kw { color:#CB7832 }                      /* keyword */
 .rx { color:#A4C260 }                      /* regex */
-.s  { color:#A4C260 }                      /* string */
+.s  { color:#A4C260 }                      /* string : green*/
 .s2 { color:#A4C260 }                      /* string */
-.k  { color:#CB783D }                      /* keyword */
+.k  { color:#CB783D }                      /* keyword : dark orange*/
 .ss { color:#6C9CBD }                      /* symbol */
 .ta { color:#E7BE69 }                      /* html tag */
 .pc { color:#6C9CBD }                      /* boolean */
+
+
+.gi { color:#A4C260 }                      /* diff: +++: green*/
+.gd { color:#faa}                          /* diff: ---: github red */
+.gu { color:#6C9CBD }                      /* diff: FIXME*/
+.gh { color:#6C9CBD }                      /* diff: FIXME */
 
 /*** PAGINATION ***/
 
