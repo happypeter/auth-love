@@ -50,7 +50,7 @@ class User < ActiveRecord::Base
         if comment.points.nil? 
           @comment_points += 0
         else 
-          @comment_points += 1
+          @comment_points += comment.points
         end
       end
     else
@@ -64,7 +64,7 @@ class User < ActiveRecord::Base
         if post.points.nil? 
           @post_points += 0
         else 
-          @post_points += 1
+          @post_points += post.points
         end
       end
     else
