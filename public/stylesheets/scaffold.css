@@ -126,7 +126,7 @@ div.field, div.actions {
 .ch { color:#509E4F }                      /* escaped character */
 .mi { color:#FFF }                         /* constant */
 .fl { color:#A4C260 }                      /* float */
-.nf { color:#FFC56D }                      /* function */
+.nf { color:#FFC56D }                      /* function: yellow. ie. "main()" in C*/
 .gv { color:#D0CFFE }                      /* global variable */
 .i  { color:#A4C260 }                      /* integer */
 .il { background:#151515 }                 /* inline code */
@@ -148,6 +148,8 @@ div.field, div.actions {
 .gu { color:#6C9CBD }                      /* diff: FIXME*/
 .gh { color:#6C9CBD }                      /* diff: FIXME */
 
+
+.nt { color:#FFC56D } 						/* xml: nt. yellow as C function */
 /*** PAGINATION ***/
 
 .pagination {
