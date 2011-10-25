@@ -150,6 +150,7 @@ div.field, div.actions {
 
 
 .nt { color:#FFC56D } 						/* xml: nt. yellow as C function */
+.cp { color:#FFC56D } 						/* xml:  yellow as C function */
 /*** PAGINATION ***/
 
 .pagination {
