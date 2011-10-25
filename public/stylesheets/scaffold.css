@@ -135,7 +135,8 @@ div.field, div.actions {
 .kt { color:#CB7832 }                      /* keyword */
 .kw { color:#CB7832 }                      /* keyword */
 .rx { color:#A4C260 }                      /* regex */
-.s  { color:#A4C260 }                      /* string : green*/
+.s  { color:#A4C260 }                      /* string : green. for "string"*/
+.s1  { color:#A4C260 }                      /* string : green. for 'string'*/
 .s2 { color:#A4C260 }                      /* string */
 .k  { color:#CB783D }                      /* keyword : dark orange*/
 .ss { color:#6C9CBD }                      /* symbol */
