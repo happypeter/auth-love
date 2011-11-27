@@ -41,15 +41,22 @@ class CommentsController < ApplicationController
       @comments = Comment.all.reverse
       @comments = @comments.paginate :per_page => 30, :page => params[:page]
     end
-
-
-
     respond_to do |format|
       format.html # index.html.erb
       format.xml  { render :xml => @comments }
     end
   end
  
+  # GET /comments/1
+  # GET /comments/1.xml
+  def show
+    @comment = Comment.find(params[:id])
+    respond_to do |format|
+      format.html # show.html.erb
+      format.xml  { render :xml => @post }
+    end
+  end
+  
   def create
     @comment = current_user.comments.build(params[:comment])
     @comment.user_id = current_user.id if current_user
