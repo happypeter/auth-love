@@ -22,10 +22,7 @@
 <% else %>
   <p> no submission </p>
 <% end %>
-<h2>Comment Threads:</h2>
-<% if @user.comments.any? %>  
-    <%= nested_comments @user.comments.arrange(:order => :created_at) %>
-<% end %>
+  
 <h2>Comments:</h2>
 
 <% @comments=Comment.where(:user_id => @user.id) %> 
