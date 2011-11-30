@@ -24,7 +24,7 @@ pre { overflow: auto; padding: 9px; max-width:600px; }
 /* do need this line */
 .subtext { font-family:Verdana; font-size:  7pt; color:#828282; }
 .title   { font-family:Verdana; font-size: 10pt; color:#828282; }
-
+.reply{margin-top:-5pt; font-size:100%;}
 
 #comment_head
 {
