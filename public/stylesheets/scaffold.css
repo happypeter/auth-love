@@ -5,47 +5,82 @@
         
 */
 
-body  { font-family:Verdana; font-size:10pt;  }
-td    { font-family:Verdana; font-size:10pt;  }
+body { 
+  font-family:Verdana; 
+  font-size:10pt;  
+}
+td { 
+  font-family:Verdana; 
+  font-size:10pt;  
+}
 
 /*links*/
-a:link    { color:#000000; text-decoration:none; }
-a:visited { color:#828282; text-decoration:none; }
-.pagetop { font-family:Verdana; font-size: 10pt; color:#000000; }
-.pagetop a:visited { color:#000000;}
-#post_body a:link, #post_body a:visited { text-decoration:underline;}
-#comment_body a:link, #comment_body a:visited { text-decoration:underline;}
-.comhead a:link { color:#828282; }
-.comhead a:hover { text-decoration:underline; }	
+a:link { 
+  color:#000000; 
+  text-decoration:none; 
+}
+a:visited { 
+  color:#828282; 
+  text-decoration:none; 
+}
+.pagetop { 
+  font-family:Verdana; 
+  font-size: 10pt; 
+  color:#000000; 
+}
+.pagetop a:visited { 
+  color:#000000;
+}
+#post_body a:link, #post_body a:visited { 
+  text-decoration:underline;
+}
+#comment_body a:link, #comment_body a:visited { 
+  text-decoration:underline;
+}
+.comhead a:link { 
+  color:#828282; 
+}
+.comhead a:hover { 
+  text-decoration:underline; 
+}	
 
 /*pre*/
-pre { overflow: auto; padding: 9px; max-width:600px; }
+pre { 
+  overflow: auto; padding: 9px; max-width:600px; 
+}
 
 /* do need this line */
-.subtext { font-family:Verdana; font-size:  7pt; color:#828282; }
-.title   { font-family:Verdana; font-size: 10pt; color:#828282; }
-.reply{margin-top:-5pt; font-size:100%;}
+.subtext { 
+  font-family:Verdana; font-size:  7pt; color:#828282; 
+}
+.title { 
+  font-family:Verdana; font-size: 10pt; color:#828282; 
+}
+.reply {
+  margin-top:-5pt; 
+  font-size:100%;
+}
 
-#comment_head
-{
-margin-bottom:-5px;
+#comment_head {
+  margin-bottom:-5px;
 }
-#comment_body
-{
+#comment_body {
+
 }
 
-#post_head
-{
-	margin-bottom:10px;
+#post_head {
+  margin-bottom:10px;
 }
-#post_body
-{
+#post_body {
 }
 
 /* <span class="comhead"> (mozilla.com) </span> */
 
-.comhead { font-family:Verdana; font-size:  8pt; color:#828282; }
-
+.comhead { 
+  font-family:Verdana; 
+  font-size:  8pt; 
+  color:#828282; 
+}
 
 /*
 a { color: #000; }
