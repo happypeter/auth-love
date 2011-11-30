@@ -1,14 +1,12 @@
 <% title "#{@user.name}'s Profile" %>
-<p>
 <table border=0>
 <tr><td valign=top>Name:</td><td><%= @user.name %></td></tr>
 <tr><td valign=top>Email:</td><td><%= @user.email %></td></tr>
 </table>
-</p>
+
 <% if @user != nil && current_user != nil %>
-  <!-- the below line produces error, if above condition does not meet -->
   <% if @user.id == current_user.id %>
-    <span class="comhead">
+    <span class="subtext">
       <%= link_to "edit", edit_user_path(@user)%>
     </span>
   <% end %>
