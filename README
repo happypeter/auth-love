@@ -23,6 +23,10 @@
    question from my students on vim or git, be it any other topic
 
 # RELEASE NOTES
+v0.9 release note:
+ - font-size resizable in IE now
+ - move most tyle to css file
+ - use time_ago_in_words to display time
 
 v0.8 release note:
  - add reply to comments
