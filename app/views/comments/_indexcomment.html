@@ -8,15 +8,12 @@
 			<% if session[:comments_voted]&&session[:comments_voted].include?(comment.id.to_s)%>
 	    		<img src="http://ycombinator.com/images/s.gif" height=1 width=14>
 			<% else %>    
-        		<a id=<%=comment.id.to_s %> onclick="return vote(this)" href=<%="/comment_vote?id="+comment.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a> 
+        		<a id=<%=comment.id.to_s %> onclick="return vote(this)" href=<%="/comment_vote?id="+comment.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 hspace=2></a> 
 			<%end%>
 		</center>
 	</td>
 
-<td>
-  <div>
-    <div id="comment_head">
-      <span class="comhead">
+    <td class="comhead">
 			<% if comment.points.nil? %>
 				0 point
 			<%elsif comment.points == 1%>
@@ -31,14 +28,13 @@
         )
 		<% @post=Post.find(comment.post_id) %>
         on: <%= link_to @post.title, post_path(@post)%>
-      </span>
-      <br \>
-    </div>
-    <div id="comment_body">
+    </td>
+</tr>
+<tr>
+	<td></td>
+	<td class="combody">
       <%= markdown(comment.body)%>
-    </div>
-  </div>
-</td>
+	</td>
 </tr>
 </table>
   <% end %>
