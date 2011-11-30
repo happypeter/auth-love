@@ -8,38 +8,37 @@
 			<% if session[:posts_voted]&&session[:posts_voted].include?(@post.id.to_s)%>
 	    	<img src="http://ycombinator.com/images/s.gif" height=1 width=14>
 			<% else %>    
-	    	<a id=<%=@post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+@post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0 vspace=3 hspace=2></a>
+	    	<a id=<%=@post.id.to_s %> onclick="return vote(this)" href=<%="/post_vote?id="+@post.id.to_s %>><img src="http://ycombinator.com/images/grayarrow.gif" border=0  hspace=2></a>
 			<%end%>
 		</center>
 	</td>
 	<td>
-		<div>
-		  	<div id="post_head">
-    			<% @user = User.find(@post.user_id )%>
-				<%=@post.title%> 
-				<br />
-    			<span class="subtext">
-
-    				(
-					<% if @post.points.nil? %>
-						0 point
-					<%elsif @post.points == 1%>
-			    	    1 point
-					<%else%>
-		   			    <%=@post.points%> points 
-	        	    <%end%>
-    				by <%= link_to  @user.name, user_path(@user) %> <%= time_ago_in_words @post.created_at %> ago
-    				<% if current_user && current_user.id == @post.user.id  %>
-      				|	<%= link_to 'edit', edit_post_path(@post) %>
-    				<% end %>
-    				)
-    			</span>
-  			</div>
- 
-  			<div id="post_body">
+   		<% @user = User.find(@post.user_id )%>	
+		<%=@post.title%> 
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td class="subtext">
+		(
+		<% if @post.points.nil? %>
+			0 point
+		<%elsif @post.points == 1%>
+    	    1 point
+		<%else%>
+		    <%=@post.points%> points 
+	    <%end%>
+		by <%= link_to  @user.name, user_path(@user) %> <%= time_ago_in_words @post.created_at %> ago
+		<% if current_user && current_user.id == @post.user.id  %>
+		|	<%= link_to 'edit', edit_post_path(@post) %>
+		<% end %>
+		)
+	</td>
+</tr>
+<tr>
+	<td></td>
+	<td>
     			<%= markdown(@post.content) %>
-  			</div>
-		</div>
 
 		<%= render "comments/form" %>
 		Use Markdown for formatting. See <%= link_to "examples", markdown_path %>.
@@ -48,6 +47,7 @@
 	</td>
 </tr>
 </table>
+
 <% if @post.comments.any? %>  
     <%= nested_comments @post.comments.arrange(:order => :created_at) %>
 <% end %>
