@@ -54,6 +54,7 @@ pre {
 .subtext { 
   font-size: 80%; 
   color:#828282; 
+  line-height:10px;
 }
 .title { 
   font-size: 100%; 
