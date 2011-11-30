@@ -12,7 +12,6 @@
 	</td>
 		
 	<td>
-		<div>
 			<div  class="comhead">
 	   			<% if comment.points.nil? %>
 					0 point
@@ -30,18 +29,18 @@
           		| <%= link_to 'edit', edit_post_comment_path(comment.post, comment) %>
        			<% end %>
    	    	</div>
-		<div class=".combody">
-    		<%= markdown(comment.body) %>
-    		<% if current_user  %>
-    		<div class="reply">
-				<u><%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %></u>
-			</div>
-    		<% else %>
-    		<div class="reply">
-				<u><%= link_to "reply", log_in_path( :post_id => comment.post.id, :parent_id => comment ) %></u>
-			</div>
-    		<% end %>
-		</div>
+		    <div class="combody">
+    	    	<%= markdown(comment.body) %>
+    	    	<% if current_user  %>
+    	    	<div class="reply">
+			    	<u><%= link_to 'reply', new_comment_path( :post_id => comment.post.id, :parent_id => comment) %></u>
+		    	</div>
+    	    	<% else %>
+    		    <div class="reply">
+			    	<u><%= link_to "reply", log_in_path( :post_id => comment.post.id, :parent_id => comment ) %></u>
+		    	</div>
+    	    	<% end %>
+	    	</div>
     	<br />
 	</td>
 </tr> 
