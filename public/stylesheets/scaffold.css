@@ -4,17 +4,26 @@
     http://www.nodethirtythree.com
         
 */
-
+/*global stuff*/
 body { 
   font-family:Arial, Helvetica, sans-serif;
   font-size:small;  
-  line-height:20px;
 }
 td { 
   font-size:100%;  
 }
+blockquote {
+  margin: 0;
+  padding-left: 10px;
+  border-left: solid 5px #CCC;
+  color: #777;
+}
+pre { 
+  overflow: auto; 
+  padding: 9px; 
+  max-width:600px; 
+}
 
-/*links*/
 a:link { 
   color:#000000; 
   text-decoration:none; 
@@ -23,6 +32,9 @@ a:visited {
   color:#828282; 
   text-decoration:none; 
 }
+
+
+/*classes*/
 .pagetop { 
   font-size: 100%; 
   color:#000000; 
@@ -30,31 +42,42 @@ a:visited {
 .pagetop a:visited { 
   color:#000000;
 }
-#post_body a:link, #post_body a:visited { 
+.posthead {
+  margin-bottom:10px;
+}
+
+.postbody {
+  line-height:20px;
+}
+.postbody a:link, .post_body a:visited { 
   text-decoration:underline;
 }
-#comment_body a:link, #comment_body a:visited { 
-  text-decoration:underline;
+
+
+.comhead { 
+  margin-bottom:-5px;
+  font-size:  80%; 
+  color:#828282; 
 }
 .comhead a:link { 
   color:#828282; 
 }
 .comhead a:hover { 
   text-decoration:underline; 
-}	
-
-/*pre*/
-pre { 
-  overflow: auto; 
-  padding: 9px; 
-  max-width:600px; 
 }
 
-/* do need this line */
+.combody{
+  line-height:20px;
+}
+.combody a:link, .combody a:visited { 
+  text-decoration:underline;
+}
+
+
+
 .subtext { 
   font-size: 80%; 
   color:#828282; 
-  line-height:10px;
 }
 .title { 
   font-size: 100%; 
@@ -64,32 +87,6 @@ pre {
   margin-top:-5pt; 
   font-size:100%;
 }
-
-#comment_head {
-  margin-bottom:-5px;
-}
-#comment_body {
-
-}
-
-#post_head {
-  margin-bottom:10px;
-}
-#post_body {
-}
-
-/* <span class="comhead"> (mozilla.com) </span> */
-
-.comhead { 
-  font-size:  80%; 
-  color:#828282; 
-}
-
-/*
-a { color: #000; }
-a:visited { color: #000; }
-a:hover { color: #000; background-color:#fff; }
-*/
 
 div.field, div.actions {
   margin-bottom: 10px;
@@ -238,17 +235,6 @@ div.field, div.actions {
 
 #about p {
   margin: 8px 0;
-}
-
-
-
-/* others */
-
-blockquote {
-  margin: 0;
-  padding-left: 10px;
-  border-left: solid 5px #CCC;
-  color: #777;
 }
 
 /* comments */
