@@ -21,8 +21,8 @@
         <td></td>
 		<td></td>
         <td class="subtext">
-        <% @user = User.find(post.user_id )%>
-        <span class="comhead">
+          <% @user = User.find(post.user_id )%>
+       
             <% if post.points.nil? %>
                 0 point
             <%elsif post.points == 1%>
@@ -32,7 +32,7 @@
             <%end%>
             by <%= link_to  @user.name, user_path(@user) %>
                  <%= time_ago_in_words post.created_at %> ago
-          |
+            |
 
             <% if post.comments.count == 0 %>
                 0 comment
@@ -47,8 +47,8 @@
           | <%= link_to 'edit', edit_post_path(post) %>
           <% end %>
 
-      </span>
-        </td>
+
+      </td>
     </tr>
     <tr style="height:5px"></tr>
 <% end %>
