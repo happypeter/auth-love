@@ -10,7 +10,6 @@ body {
   font-size:small;  
 }
 td { 
-  font-family:Verdana; 
   font-size:100%;  
 }
 
@@ -24,7 +23,6 @@ a:visited {
   text-decoration:none; 
 }
 .pagetop { 
-  font-family:Verdana; 
   font-size: 100%; 
   color:#000000; 
 }
@@ -53,10 +51,12 @@ pre {
 
 /* do need this line */
 .subtext { 
-  font-family:Verdana; font-size: 80%; color:#828282; 
+  font-size: 80%; 
+  color:#828282; 
 }
 .title { 
-  font-family:Verdana; font-size: 100%; color:#828282; 
+  font-size: 100%; 
+  color:#828282; 
 }
 .reply {
   margin-top:-5pt; 
@@ -79,7 +79,6 @@ pre {
 /* <span class="comhead"> (mozilla.com) </span> */
 
 .comhead { 
-  font-family:Verdana; 
   font-size:  80%; 
   color:#828282; 
 }
