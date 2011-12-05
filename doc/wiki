@@ -57,6 +57,8 @@ having this, they no longer need to clone your repo first
 
 ## mysql 
 
+rails new happywords -d mysql
+>drop database ddd_test;
 
 Q: About the mysql-adapter issue, it was strange for me, why in railscasts
 it is just "mysql" in it, while my authlove has to have "mysql <0.3" in Gemfile
