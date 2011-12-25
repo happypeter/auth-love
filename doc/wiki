@@ -121,9 +121,9 @@ how to restore a db:
 that's all
 
 for better git history, I think I need something to separete different records in to different lines.
-
-mysqldump --extended-insert=FALSE --complete-insert=TRUE -uroot authlove_development >authlove_development.sql 
-mysql -uroot authlove_development<authlove_development.sql
+    
+    peter@lover$ cd local_clone/happynewsdb/
+    mysqldump --extended-insert=FALSE --complete-insert=TRUE -uroot authlove_development >authlove_development.sql 
 
 ## don't use phpmyadmin to delete posts entry
 
