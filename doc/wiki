@@ -113,6 +113,14 @@ since my current will_paginate works, so I do not want to do a update.
 NOTE: need to restart apache to test things, when using "passenger + ENV= development".
 ### mysql commands
 
+#### how to delete a db record and also decrements the id
+
+    first dump the db into a sql file(better to use one line format)
+    remove the record you hate
+    decrement the id after AUTO_INCREAMENT=?
+    restore the db
+
+
 Delete a row(s) from a table.
 
     mysql> DELETE from [table name] where [field name] = 'whatever';
@@ -139,7 +147,7 @@ how to dump a db:
 
 how to restore a db:
 
-    mysql> create database authlove_development;
+    mysql> create database authlove_development; # with rails, this is done by "rake db:create;rake db:migrate"
     Query OK, 1 row affected (0.00 sec)
 
     peter@server-me:~/happynewsdb$ mysql -uroot authlove_development<authlove_development.sql 
