@@ -25,14 +25,15 @@
                   <td><blockquote><p>Block quote</p></blockquote></td>
                 </tr>
                 <tr>
-                  <td><pre>`Inline code`</pre></td>
+                  <td><code>`Inline code`</code></td>
                   <td><code>Inline code</code></td>
                 </tr>
                 <tr>
                   <td>
-                    <pre>
+                    <pre><code>
 ```
-#include <stdio.h>
+#include &lt;stdio.h&gt;
+// code block
 
 int main(int argc, const char *argv[])
 {
@@ -41,11 +42,23 @@ int main(int argc, const char *argv[])
 }
 ```
 
-`return 0;` is necessary here
 
+                    </code></pre>
+                  </td>
+                  <td>
+                    <pre>
+                    <code>
+#include &lt;stdio.h&gt;
+// code block
+
+int main(int argc, const char *argv[])
+{
+    printf("hello everyone!\n");
+    return 0;
+}
+                    </code>
                     </pre>
                   </td>
-                  <td><%= raw markdown(render "hello") %></td>
                 </tr>
               </table>
 </div>
