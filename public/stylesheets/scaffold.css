@@ -124,6 +124,10 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+/* for the labels in submit form*/
+.control-label {
+  display: block;
+}
 /*** Markdown example **/
 
 .markdown_examples {
