@@ -3,6 +3,7 @@ class Post < ActiveRecord::Base
   validates :title, :presence => true,
                     :length => { :minimum => 2 }
 
+  validates_presence_of :content
   ## for will_paginate
   cattr_reader :per_page
   @@per_page = 30

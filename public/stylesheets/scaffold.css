@@ -1,4 +1,4 @@
-/*
+public/stylesheets/scaffold.css
 
     terrafirma1.0 by nodethirtythree design
     http://www.nodethirtythree.com
@@ -96,8 +96,11 @@ div.field, div.actions {
 
 .field_with_errors {
   padding: 2px;
-  background-color: red;
   display: table;
+}
+span.error {
+  margin-left: 30px;
+  color: red;
 }
 
 #error_explanation {

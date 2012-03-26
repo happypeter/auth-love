@@ -1,5 +1,4 @@
 <%= simple_form_for(@post) do |f| %>
-  <%= f.error_notification %>
   <% if current_user %>  
   <%= f.input :title,  :input_html => { :size => 47 }%>
   <%= f.input :content,:input_html => { :cols => 60 } %>
