@@ -1,3 +1,9 @@
+
+
+
+mysqldump --extended-insert=FALSE --complete-insert=TRUE -uroot 
+
+
 # shanghai company
 
 http://wiredcraft.com/
