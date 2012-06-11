@@ -7,7 +7,6 @@ gem "will_paginate", "~> 3.0.pre2"
 gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
-gem 'passenger'
 gem 'ancestry'
 gem 'simple_form'
 
