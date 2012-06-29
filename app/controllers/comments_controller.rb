@@ -62,6 +62,7 @@ class CommentsController < ApplicationController
     @comment.user_id = current_user.id if current_user
     respond_to do |format|
       if @comment.save
+        PeterMailer.new_comment.deliver
         format.html { redirect_to(post_path(@comment.post), :notice => 'Comment was successfully created.') }
       else
         #FIXME: this is still not really User-friendly

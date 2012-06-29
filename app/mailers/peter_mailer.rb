@@ -8,4 +8,7 @@ class PeterMailer < ActionMailer::Base
     @user = user
     mail(:to => "#{user.name} <#{user.email}>", :subject => "Password Reset")    
   end     
+  def new_comment
+    mail(:to => "happypeter<happypeter1983@gmail.com>", :subject => "New Comment at happypeter.org!") 
+  end
 end
