@@ -1,21 +1,28 @@
 source 'http://rubygems.org'
 
-gem 'rails', '3.0.7'
+gem 'rails', '3.2.6'
 gem 'rake', '0.9.2.2'
-gem "will_paginate", "~> 3.0.pre2"
+gem 'will_paginate', '> 3.0'
 
 gem 'redcarpet'
 gem 'albino'
 gem 'nokogiri'
 gem 'ancestry'
 gem 'simple_form'
+gem 'pygments.rb'
 
-# Bundle edge Rails instead:
-# gem 'rails', :git => 'git://github.com/rails/rails.git'
+
+group :assets do
+  gem 'coffee-rails', "~> 3.2.1"
+  gem 'uglifier'
+  gem 'sass-rails', '~> 3.1'
+  gem 'bootstrap-sass', '~> 2.0.4.0'
+end
+gem "jquery-rails"
 
 gem 'bcrypt-ruby', :require => 'bcrypt'  
 gem 'sqlite3'
-gem 'mysql2', '< 0.3'
+gem 'mysql2', "~> 0.3.10"
 
 
 # Use unicorn as the web server

@@ -6,7 +6,7 @@
      <th>comments</th>
  	 <th>points</th>
   </tr>
-<% if @users != nil %>
+<% if !@users.blank? %>
   <% @users.each do |user| %>
   <p>
     <tr>

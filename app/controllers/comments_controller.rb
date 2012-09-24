@@ -38,8 +38,7 @@ class CommentsController < ApplicationController
     if params[:search]
       @comments = Comment.search(params[:search], params[:page])
     else
-      @comments = Comment.all.reverse
-      @comments = @comments.paginate :per_page => 30, :page => params[:page]
+      @comments = Comment.recent.page(params[:page]).per_page(30)
     end
     respond_to do |format|
       format.html # index.html.erb

@@ -4,9 +4,8 @@ class Post < ActiveRecord::Base
                     :length => { :minimum => 2 }
 
   validates_presence_of :content
-  ## for will_paginate
-  cattr_reader :per_page
-  @@per_page = 30
+
+  scope :recent, order('id DESC')
 
   ## I don't really want posters to delete other people's comments
   # that's not fair, but if the post is deleted the comments can still
@@ -14,10 +13,4 @@ class Post < ActiveRecord::Base
   # so ain't broke, don't fixj
   has_many :comments, :dependent => :destroy
   belongs_to :user
-  def self.search(search, page)
-    paginate :per_page => 30, :page => page,
-             :conditions => ['title like ?', "%#{search}%"], 
-             :order => 'id DESC' #DESC: list in reverse order
-  end
-
 end

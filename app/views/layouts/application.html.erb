@@ -5,9 +5,9 @@
   <meta http-equiv="Content-type" content="text/html; charset=utf-8">
  
   <title><%= content_for?(:title) ? yield(:title) : "HappyNews" %> </title>
-  <link rel="shortcut icon" href="/images/favicon.ico"/>
-  <%= stylesheet_link_tag :all %>
-  <%= javascript_include_tag :defaults %>
+  <link rel="shortcut icon" href="<%= asset_path("favicon.ico") %>" />
+  <%= stylesheet_link_tag "application" %>
+  <%= javascript_include_tag "application" %>
   <%= csrf_meta_tag %>
 </head>
 <body>
@@ -37,16 +37,15 @@
     		<table  width="100%" bgcolor=#ff6600>
     			<tr>
       				<td style="width:18px;padding-right:4px">
-      					<a href="http://happypeter.org">
-      						<img src="/images/favicon.ico" width=18 height=18 style="border:1px #ffffff solid;"></img>
+      					<a href="/">
+                            <%= image_tag "favicon.ico", :id => "logo_icon"%>
       					</a>
       				</td>
 				
       				<td style="text-align:left;">
 						<span class="pagetop">
       					<b><%= link_to 'Happy News', posts_path %> </b> 
-        				<%= link_to 'new', posts_path %>  
-      					| <%= link_to 'comments', comments_path %>  
+      					 <%= link_to 'comments', comments_path %>  
       					| <%= link_to 'submit', new_post_path %>
 						</span>
       				</td>
@@ -94,21 +93,6 @@
     		</table>
 		</td>
 	</tr>
-
-
-	<tr>
-		<td>
-			<br />
- 			<center>
- 				<%= form_tag posts_path, :method => "get" do %>
-        			<%= text_field_tag :search, params[:search], :size => 25 %>
-        			<%= submit_tag "Search by title", :name => nil %>
- 				<% end %>
- 			</center>	
-			<br />
-		</td>
-	</tr>
-
 </table>
 </center>
 </body>

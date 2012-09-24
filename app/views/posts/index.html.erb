@@ -1,7 +1,6 @@
 <% content_for :title, "new submissions" %>
 
-<% if @posts.empty? %>
-
+<% if @posts.nil? %>
   No post found
 <% else %>
   <%= render 'posthead' %>

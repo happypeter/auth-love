@@ -1,10 +1,4 @@
-public/stylesheets/scaffold.css
 
-    terrafirma1.0 by nodethirtythree design
-    http://www.nodethirtythree.com
-        
-*/
-/*global stuff*/
 body { 
   font-family:Arial, Helvetica, sans-serif;
   font-size:small;  
@@ -31,6 +25,11 @@ a:visited {
   text-decoration:none; 
 }
 
+#logo_icon {
+  width: 18px;
+  height: 18px;
+  border: 1px #ffffff solid;
+}
 
 /*classes*/
 .pagetop { 

@@ -32,11 +32,8 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.search(params[:search], params[:page])
     else
-      @posts = Post.all.reverse
-      @posts = @posts.paginate :per_page =>30, :page => params[:page]
+      @posts = Post.recent.page(params[:page]).per_page(30)
     end
-
-
 
     respond_to do |format|
       format.html # index.html.erb

@@ -40,14 +40,14 @@ class UsersController < ApplicationController
       render "new"  
     end  
   end  
-end  
-  def index
-      @users = User.all
 
+  def index
+    @users = User.all
     respond_to do |format|
       format.html # index.html.erb
     end
   end
+
   def show
     if params[:name]
       @user = User.where(:name => params[:name]).first
@@ -59,6 +59,7 @@ end
     else
       respond_to do |format|
         format.html # show.html.erb
+      end
     end
   end
 end

@@ -1,3 +1,4 @@
+# encoding: UTF-8
 # This file is auto-generated from the current state of the database. Instead
 # of editing this file, please use the migrations feature of Active Record to
 # incrementally modify your database, and then regenerate this schema definition.
@@ -15,8 +16,8 @@ ActiveRecord::Schema.define(:version => 20111018040155) do
   create_table "comments", :force => true do |t|
     t.text     "body"
     t.integer  "post_id"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.string   "ancestry"
     t.integer  "points"
@@ -27,8 +28,8 @@ ActiveRecord::Schema.define(:version => 20111018040155) do
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "content"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
     t.integer  "user_id"
     t.integer  "points"
   end
@@ -37,8 +38,8 @@ ActiveRecord::Schema.define(:version => 20111018040155) do
     t.string   "email"
     t.string   "password_hash"
     t.string   "password_salt"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at",             :null => false
+    t.datetime "updated_at",             :null => false
     t.string   "name"
     t.string   "auth_token"
     t.string   "password_reset_token"
