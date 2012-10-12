@@ -96,6 +96,8 @@ GEM
     rubypython (0.5.3)
       blankslate (>= 2.1.2.3)
       ffi (~> 1.0.7)
+    rufus-scheduler (2.0.17)
+      tzinfo (>= 0.3.23)
     sass (3.2.1)
     sass-rails (3.2.5)
       railties (~> 3.2.0)
@@ -136,6 +138,7 @@ DEPENDENCIES
   rails (= 3.2.6)
   rake (= 0.9.2.2)
   redcarpet
+  rufus-scheduler (~> 2.0.17)
   sass-rails (~> 3.1)
   simple_form
   sqlite3
