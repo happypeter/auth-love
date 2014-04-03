@@ -10,6 +10,7 @@ gem 'nokogiri'
 gem 'ancestry'
 gem 'simple_form'
 gem 'pygments.rb'
+gem "rufus-scheduler", "~> 2.0.17"
 
 
 group :assets do
@@ -20,7 +21,7 @@ group :assets do
 end
 gem "jquery-rails"
 
-gem 'bcrypt-ruby', :require => 'bcrypt'  
+gem 'bcrypt-ruby', :require => 'bcrypt'
 gem 'sqlite3'
 gem 'mysql2', "~> 0.3.10"
 
