@@ -1,7 +1,7 @@
 source 'http://rubygems.org'
 
 gem 'rails', '3.2.6'
-gem 'rake', '0.9.2.2'
+gem 'rake', '12.3.3'
 gem 'will_paginate', '> 3.0'
 
 gem 'redcarpet'
